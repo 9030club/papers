@@ -31,7 +31,7 @@ The 3090club research platform provides interactive analysis of academic papers 
 
 This site is automatically deployed via GitHub Pages from the `main` branch.
 
-**Live URL**: [https://9030club.github.io/papers/](https://9030club.github.io/papers/)
+**Live URL**: [https://9030club.github.io/papers/index.html](https://9030club.github.io/papers/index.html)
 
 ## Version
 
