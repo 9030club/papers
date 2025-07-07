@@ -78,57 +78,89 @@
         "page_number": 1,
         "filename": "page-001.png",
         "thumb_filename": "page-001-thumb.png",
+        "mobile_filename": "page-001-mobile.png",
+        "mobile_thumb_filename": "page-001-mobile-thumb.png",
         "width": 1275,
-        "height": 1650
+        "height": 1650,
+        "mobile_width": 2550,
+        "mobile_height": 3300
       },
       {
         "page_number": 2,
         "filename": "page-002.png",
         "thumb_filename": "page-002-thumb.png",
+        "mobile_filename": "page-002-mobile.png",
+        "mobile_thumb_filename": "page-002-mobile-thumb.png",
         "width": 1275,
-        "height": 1650
+        "height": 1650,
+        "mobile_width": 2550,
+        "mobile_height": 3300
       },
       {
         "page_number": 3,
         "filename": "page-003.png",
         "thumb_filename": "page-003-thumb.png",
+        "mobile_filename": "page-003-mobile.png",
+        "mobile_thumb_filename": "page-003-mobile-thumb.png",
         "width": 1275,
-        "height": 1650
+        "height": 1650,
+        "mobile_width": 2550,
+        "mobile_height": 3300
       },
       {
         "page_number": 4,
         "filename": "page-004.png",
         "thumb_filename": "page-004-thumb.png",
+        "mobile_filename": "page-004-mobile.png",
+        "mobile_thumb_filename": "page-004-mobile-thumb.png",
         "width": 1275,
-        "height": 1650
+        "height": 1650,
+        "mobile_width": 2550,
+        "mobile_height": 3300
       },
       {
         "page_number": 5,
         "filename": "page-005.png",
         "thumb_filename": "page-005-thumb.png",
+        "mobile_filename": "page-005-mobile.png",
+        "mobile_thumb_filename": "page-005-mobile-thumb.png",
         "width": 1275,
-        "height": 1650
+        "height": 1650,
+        "mobile_width": 2550,
+        "mobile_height": 3300
       },
       {
         "page_number": 6,
         "filename": "page-006.png",
         "thumb_filename": "page-006-thumb.png",
+        "mobile_filename": "page-006-mobile.png",
+        "mobile_thumb_filename": "page-006-mobile-thumb.png",
         "width": 1275,
-        "height": 1650
+        "height": 1650,
+        "mobile_width": 2550,
+        "mobile_height": 3300
       },
       {
         "page_number": 7,
         "filename": "page-007.png",
         "thumb_filename": "page-007-thumb.png",
+        "mobile_filename": "page-007-mobile.png",
+        "mobile_thumb_filename": "page-007-mobile-thumb.png",
         "width": 1275,
-        "height": 1650
+        "height": 1650,
+        "mobile_width": 2550,
+        "mobile_height": 3300
       },
       {
         "page_number": 8,
         "filename": "page-008.png",
         "thumb_filename": "page-008-thumb.png",
+        "mobile_filename": "page-008-mobile.png",
+        "mobile_thumb_filename": "page-008-mobile-thumb.png",
         "width": 1275,
-        "height": 1650
+        "height": 1650,
+        "mobile_width": 2550,
+        "mobile_height": 3300
       }
     ]
   },
