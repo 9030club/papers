@@ -1,0 +1,548 @@
+{
+  "title": "Causal Emergence 2.0: Quantifying Emergent Complexity",
+  "slug": "2503.13395v3",
+  "questions": {
+    "1": {
+      "question": "What were they trying to do?",
+      "answer": "The main goal of the paper \"Causal Emergence 2.0: Quantifying emergent complexity\" is to introduce a new theory of emergence that can identify and quantify the unique causal contributions of different scales within complex systems. The objective is to resolve the debate about the relevance of macroscales beyond mere compression by treating system scales as slices of a higher-dimensional object, thereby distinguishing which scales have unique causal contributions. This theory, grounded in an axiomatic notion of causation, aims to provide a comprehensive framework for understanding and measuring emergent complexity across multiscale structures.",
+      "timestamp": "2025-07-14 12:37:28"
+    },
+    "2": {
+      "question": "Why does it matter?",
+      "answer": "The paper matters because it introduces Causal Emergence 2.0, a new theory that quantifies emergent complexity by identifying which scales of a system contribute uniquely to its causal workings. This is important for scientists across various fields, as it provides a formal framework to understand and model complex systems beyond mere compression, resolving debates about the causal relevance of macroscales. Understanding causal emergence can enhance our comprehension of systems in biology, neuroscience, and AI, potentially improving the interpretation and safety of AI systems. Ultimately, this work contributes to the broader scientific understanding of how complex systems operate across multiple scales, challenging traditional reductionist views.",
+      "timestamp": "2025-07-14 12:37:33"
+    },
+    "3": {
+      "question": "What did they try?",
+      "answer": "The authors introduced a new theory called Causal Emergence 2.0 to address the issue of identifying causally relevant scales in complex systems. Their approach treats different scales of a system as slices of a higher-dimensional object and uses an axiomatic notion of causation to detect unique causal contributions across scales. They employ a causal apportioning schema to calculate the causal contribution of each scale and define a micro-to-macro path that traverses the hierarchy of scales, quantifying the degree of causal emergence by measuring gains in causal primitives like sufficiency and necessity. This method allows them to identify and quantify emergent complexity by assessing how widely distributed a system's causal workings are across its scales.",
+      "timestamp": "2025-07-14 12:37:38"
+    },
+    "4": {
+      "question": "Did it work?",
+      "answer": "Yes, the idea presented in the paper, Causal Emergence 2.0, did work and showed improvements over the previous version (CE 1.0). The new theory successfully quantifies emergent complexity by using an axiomatic approach to causation, allowing it to capture all cases of macroscale causation and reveal the multiscale causal structure of systems. It also introduces a novel measure of emergent complexity, demonstrating how causal contributions are distributed across different scales, which was not possible with the previous framework.",
+      "timestamp": "2025-07-14 12:37:50"
+    },
+    "5": {
+      "question": "What did they compare it to?",
+      "answer": "The paper compares the new Causal Emergence 2.0 (CE 2.0) framework to its predecessor, Causal Emergence 1.0 (CE 1.0), and other theories of emergence. CE 2.0 is shown to be better as it captures all possible cases of macroscale causation, which CE 1.0 does not, and it is grounded in an axiomatic notion of causation rather than relying solely on the effective information (EI) measure. The paper uses benchmarks like the gain in causal primitives (sufficiency and necessity) and the determinism and specificity to demonstrate the superiority of CE 2.0 over CE 1.0 and other related theories.",
+      "timestamp": "2025-07-14 12:37:57"
+    },
+    "6": {
+      "question": "What was it tested on?",
+      "answer": "The theory of Causal Emergence 2.0 was tested on coarse-grains of Markov chains. The evaluation involved calculating the causal primitives (sufficiency and necessity) and their information-theoretic generalizations (determinism and degeneracy) across different scales of a system. The evaluation setup included a micro-to-macro path that traverses a hierarchy of scales, identifying the scales with positive causal contributions and quantifying the degree of causal emergence by the total gain in causal primitives along this path. The theory was demonstrated using an 8-state Markov chain, where gains in causal primitives were tracked as states were coarse-grained along a chosen path.",
+      "timestamp": "2025-07-14 12:38:04"
+    },
+    "7": {
+      "question": "What's cool about it?",
+      "answer": "The novel aspect of the paper is its introduction of Causal Emergence 2.0 (CE 2.0), which provides a new framework for understanding and quantifying emergent complexity in systems by treating different scales as slices of a higher-dimensional object. This approach is surprising and elegant because it uses an axiomatic notion of causation to identify unique causal contributions across scales, resolving issues with previous models that relied heavily on effective information. CE 2.0 also introduces a novel measure of emergent complexity, capturing how widely distributed a system's causal workings are across its hierarchy of scales, offering a more comprehensive understanding of multiscale causal structures.",
+      "timestamp": "2025-07-14 12:38:18"
+    },
+    "8": {
+      "question": "What's sketchy about it?",
+      "answer": "The paper presents several potential red flags and limitations. One major concern is the reliance on a specific micro-to-macro path to define the hierarchy of scales, which may not capture the full complexity of systems with multiple valid paths. Additionally, the approach faces a combinatorial explosion when traversing the set of macroscales, making it impractical for larger systems without heuristics. Furthermore, the initial formulation of CE 2.0 does not specify how to integrate across multiple non-commensurate paths, which could limit its applicability in complex real-world systems.",
+      "timestamp": "2025-07-14 12:38:25"
+    },
+    "9": {
+      "question": "Can anyone use this?",
+      "answer": "The theory of Causal Emergence 2.0, as presented in the paper, is primarily a theoretical framework designed to quantify emergent complexity in complex systems. It is complex and likely requires specialized knowledge in fields like mathematics, information theory, and systems science to apply effectively. While the theory itself is not inherently expensive, its practical application may be limited to researchers with expertise in these areas, and it may not be directly accessible or practical for general use without significant understanding of the underlying concepts.",
+      "timestamp": "2025-07-14 12:38:40"
+    },
+    "10": {
+      "question": "What's still left to figure out?",
+      "answer": "The paper identifies several unresolved issues and future directions for research. One limitation of Causal Emergence 2.0 (CE 2.0) is its reliance on a single chosen micro-to-macro path, which may not capture the full complexity of multiscale systems. Future research could explore developing a causal apportioning schema that integrates multiple paths or partitions. Additionally, the combinatorial explosion associated with traversing the set of macroscales poses a practical challenge, suggesting a need for heuristics or alternative methods to efficiently analyze larger systems.",
+      "timestamp": "2025-07-14 12:38:51"
+    }
+  },
+  "markdown_pages": [
+    {
+      "id": 1,
+      "title": "Causal Emergence 2.0: Quantifying emergent complexity",
+      "content": "# Causal Emergence 2.0: Quantifying emergent complexity\n\n## Erik Hoel ${ }^{* 1}$<br>${ }^{1}$ Allen Discovery Center, Tufts University, Medford, MA, USA\n\n## April 22, 2025\n\n#### Abstract\n\nComplex systems can be described at myriad different scales, and their causal workings often have multiscale structure (e.g., a computer can be described at the microscale of its hardware circuitry, the mesoscale of its machine code, and the macroscale of its operating system). While scientists study and model systems across the full hierarchy of their scales, from microphysics to macroeconomics, there is debate about what the macroscales of systems can possibly add beyond mere compression. To resolve this longstanding issue, here a new theory of emergence is introduced, wherein the different scales of a system are treated like slices of a higher-dimensional object. The theory can distinguish which of these scales possess unique causal contributions, and which are not causally relevant. Constructed from an axiomatic notion of causation, the theory's application is demonstrated in coarse-grains of Markov chains. It identifies all cases of macroscale causation: instances where reduction to a microscale is possible, yet lossy about causation. Furthermore, the theory posits a causal apportioning schema that calculates the causal contribution of each scale, showing what each uniquely adds. Finally, it reveals a novel measure of emergent complexity: how widely distributed a system's causal workings are across its hierarchy of scales.\n\n## 1 Introduction\n\nComplex systems operate across scales, and therefore evince a huge number of possible descriptions [1]. This has led to claims that there is \"no privi-\n\n[^0]\n[^0]:    *erik.hoel@tufts.edu\n\nleged level of causation\" in complex systems, such as in biology [2]. However, the set of all possible scales - in the form of dimensionality reductions - is extremely large, even for small systems, and the majority are poor descriptions of a system's causal workings (e.g., randomly coarse-graining the logic gates of a computer).\n\nThis embarrassment of multiplicity necessitates a formal mathematical theory of emergence. Such a theory should explain and quantify how macroscales (higher-level descriptions of a system, based on some dimensionality reduction) contribute to a system's causal workings, and which macroscales are causally relevant. A theory of emergence may even explain the spatiotemporal hierarchy of the sciences themselves, beyond their function of just useful compressions [3].\n\nIt might be protested that there is no room for emergence in science, as presumably the future of any given system can be predicted with full knowledge of its microscale, and presumably any given system can be reduced to its microscale. However, prediction is not the same thing as causation [4]. A toy example is that of a thermostat and room system [5, 6]. While in theory the microscale of all the individual particles in the room could be used to predict the thermostat's reading, in terms of causal understanding it represents a poor answer to the question of \"What caused the thermostat to read $20^{\\circ} \\mathrm{C}$ ?\" In fact, the exact microstate of all the particles is not causally necessary for the reading, since many other configurations could lead to it. Meanwhile, the macrostate (the temperature of the room) has a direct causal relationship to the thermostat's reading, in that it is necessary for any given value.\n\nIn another example, an incoming signal to a neuron's dendrites could be used to predict that a downstream action potential will occur. Yet, in a causal analysis, the incoming signal would be insufficient to trigger (as an effect) some exact exchange of ions, as this would evolve unpredictably due to noise, such as from Brownian motion [7] or quantum effects [8]. Meanwhile, the incoming signal could still be deterministically sufficient to trigger (as an effect) the downstream neuronal macrostate of \"firing,\" irrespective of its underlying microscale details.\n\nFollowing these intuitions, in 2013 my co-authors and I introduced the theory of causal emergence [9]. The theory made use of discrete causal models (in the class of logic gate networks, DAGs, and Markov chains), and a measure of causation, the effective information (EI) [10]. The theory provided a toolkit to search across all possible dimension reductions of such systems to find the one that maximized the EI (wherein the EI is assessed by perturbing the system into all possible states via the $d o(x)$ operator\n\n[11], and then calculating the mutual information between that probability distribution of interventions and the probability distribution of their effects). Identifying the macroscale with the maximal increase in EI quantified the degree of causal emergence in the system.\n\nCausal emergence revealed why macroscales of a system can have stronger causal relationships despite being reducible to their underlying macroscales: since macroscales are multiply-realizable, they can minimize the uncertainty in causal relationships, which a measure of causation like the EI is sensitive to. This is mathematically similar to how coding over an information channel can minimize the noise of communication $[3,10]$.\n\nThe theory of causal emergence has since spawned a large amount of research, such as measuring causal emergence in data spanning from cellular automata [12] to fMRI data [13] to gene regulatory networks [14, 15], as well as developing heuristics [16], like detecting causal emergence with trained artificial neural networks [17]. It's been related to phenomena like scale-freeness and robustness in network theory [18, 19], been adapted within Integrated Information Theory [20, 21], and there have been proposals for alternatives of what measure should be used for quantifying causal emergence, such using the dynamical reversibility of a system to approximate the EI [22]. For a full review, see Yuan et al. 2024 [23].\n\nHowever, the initial version of causal emergence (hereafter, CE 1.0) has remained incomplete, due to two outstanding issues. The first is the reliance on the EI (and its approximations) to detect causal emergence. While the EI is a relatively well-constructed measure of causation [24], it makes background assumptions in its calculations (such as requiring a uniform distribution of interventions, which some have criticized) [25, 26, 27]. Additionally, as demonstrated here in Section 6.2, the use of EI actually underestimates causal emergence.\n\nThe second issue is that CE 1.0 only identified a single causally-relevant scale (the maximum of EI), ignoring all multiscale structure. Yet many systems seem to operate across scales; a prominent example being the brain's different functional scales, ranging from the neuronal up to cortical minicolumns up to entire brain regions [28]. Another example is how a computer can be described at the microscale of its hardware circuitry, the mesoscale of its machine code software, or at the macroscale of its operating system and applications [29]; indeed, even what computations are occurring may change depending on the scale of description [30, 31].\n\nTo develop a universal and well-grounded theory of causal emergence that resolves these issues, here I introduce a novel formalization: Causal Emergence 2.0. The fundamental intuition of CE 2.0 is that a system is not\n\nbound to one particular scale of description; rather, it is best described by the set of scales that contribute to the system's causal workings. Any one scale (even the microscale) is much like taking a 2 D slice of a 3 D object, and therefore cannot fully capture the causation of the system. CE 2.0 posits a causal apportioning schema across scales that detects their causal contributions (if any) to the multiscale whole. This is accomplished via defining a path that traverses a system's scales from \"top to bottom,\" and the theory apportions out the causation of a system's workings along this path.\n\nCE 2.0 is grounded in an axiomatic notion of causation, rather than a stand-alone measure (like the EI in CE 1.0), which allows the theory to capture all cases of macroscale causation, and also unfold and quantify the multiscale causal structure of systems in ways previously impossible. This new taxonomy of how systems operate across scales leads to a novel measure, the emergent complexity: how widely distributed a system's causal workings are across its scales, wherein systems that possess many contributing scales are more complex.\n\nIn what follows, CE 2.0 is outlined, first by defining a notion of causation that is axiomatic and robust across background assumptions, then by using that to calculate the degree of macroscale causation in coarse-grains of model Markov chains and therefore to quantify their degree of causal emergence, then by detailing how causal contributions are assigned via a path that traverses the set of scales, and furthermore exploring how this naturally arrives at the notion of emergent complexity. Finally, CE 2.0 is directly compared to other related theories of emergence, demonstrating its advantages and outlining its conceptual implications."
+    },
+    {
+      "id": 2,
+      "title": "2 The axioms of causation",
+      "content": "# 2 The axioms of causation\n\n### 2.1 Sufficiency and necessity\n\nScientists distill and extract causal knowledge about the systems they study [32]. Breakthroughs in the scientific understanding of causation include things like R.A. Fisher's formalization of randomized controlled trials [33], as well as Judea Pearl's more recent introduction of the $d o(x)$ operator [11].\n\nA number of researchers have introduced specific probabilistic measures of causality to capture the degree of causation between a cause and an effect. The aim of such measures can be described in various ways, e.g., as capturing the power of a particular cause, the strength of a particular causal relationship, the amount by which one variable causally controls another,\n\netc. Applying such measures of causation involves specifying a causal model, then using counterfactuals [34] or interventions [11] to separate causal knowledge from mere observation.\n\nRecent work analyzing over a dozen proposed measures of probabilistic causation by different authors [27] showed that in the scientific literature there is causal consilience: measures of causation, independently introduced across fields from psychology to statistics to philosophy [35], all set in relation two basic terms. These terms were dubbed \"causal primitives\" [27]-more commonly, they are known as the sufficiency and the necessity. Consilience held true for measures of causation ranging from those proposed by philosopher David Lewis [34], to to mathematician Judea Pearl [11], to my and my co-author's recent definition of actual causation [36]. Rediscovered many times independently, the primitives form an axiomatic foundation for any measure of causation, and ensure that measures of causation have significant overlap in their mathematical behavior. Ultimately, each term represents an inverse of uncertainty: sufficiency is the certainty about an effect, given a cause, whereas necessity is the certainty about a cause, given an effect.\n\nAs will be shown, the causal primitives of sufficiency and necessity have a further information-theoretic generalization, the determinism and degeneracy (respectively). CE 2.0 is based explicitly on these primitives and their further generalization.\n\nFirst, to define the causal primitives formally, some terminology is required. For a discrete system like a Markov chain, DAG, or set of logic gates, assessing the causal primitives (hereafter CP ) involves specifying some abstract space associated with the system, $\\Omega$, which defines the set of occurrence (e.g., states, or events, variables, etc.) entered into the causal analysis. Then, for any occurrence (like a state transition), we can define the potential causes, $C \\in \\Omega$, and the potential effects, $E \\in \\Omega$.\n\nAs the theory will be specified in simulated Markov chains, here $\\Omega$ is simply a system's statespace. Occurrences are then a state transition, in that for a Markov chain there is always some individual preceding state of the system, $c$, and its effect $e$, the next state. These transitions each have some probability, $P$.\n\n## Given an occurrence (here, a state transition), the sufficiency of a cause is then\n\n$$\n\\operatorname{suff}(e, c)=P(e \\mid c)\n$$\n\nwhich increases as $c$ is more probabilistically likely to bring about $e$, and\n\nreaches 1 when $c$ is fully sufficient for $e$.\n## The necessity of a cause is\n\n$$\nn e c(e, c)=1-P(e \\mid C, \\neg c)\n$$\n\nwhich specifies the probability of $e$ occurring without $c$. That is, given some set of causes $C$ within the system, and given that, within that set, $c$ itself did not occur, what is the inverse of the probability of $e$ ? This probability is low when there are many common causes, and is 1 only when $c$ is absolutely necessary for $e$, in that no other members of $C$ could produce it (in a Markov chain, this would mean no other states lead to the state $e$ at the next timestep).\n\nSince the goal is to compare causation between entire scales, the terms \"sufficiency\" and \"necessity\" (and their joint description as CP) will henceforth imply their system-wide average across all $t$ to $t_{+1}$ transitions. This average is weighted by the probability of each transition $P(e \\mid c)$, given $P(C)$.\n\nIn a causal analysis, $P(C)$ is purposefully not the observed distribution [37]. The choice of $P(C)$ can be conceptualized as identifying the set of viable counterfactuals or, alternatively and identically, specifying some set of possible interventions in the causal model of a system [10, 37]. Since the following values will be calculated in Markov chains defined by some transition probability matrix (TPM) and its transitions (from $t$ to $t_{+1}$ ), here $P(C)$ is a uniform distribution across the entire set of states, given some scale of a system.\n\nConceptually, this just means that states of a scale are treated equally when it comes to being viable interventions or counterfactuals to assess the causal relationships of other states. E.g., given a COPY gate with a self-loop of $p=1$, this would imply we consider both 0 and 1 equally in $P(C)$, and therefore could correctly say that the state $\\operatorname{COPY}=1$ (at $t$ ) is sufficient and necessary for the state $\\operatorname{COPY}=1$ at $t_{+1}$ (note that with an observed distribution such a judgment would be impossible)."
+    },
+    {
+      "id": 3,
+      "title": "2.2 Determinism and degeneracy",
+      "content": "# 2.2 Determinism and degeneracy\n\nThe sufficiency and necessity each have an information-theoretic generalization: the determinism and the degeneracy of a system [9].\n\nSpecifically, the determinism is the inverse of noise (or randomness) in the probability distributions of state transitions, and therefore is an information-theoretic generalization of the sufficiency. For an individual cause $c$ it can be defined as a coefficient, based on the entropy of $c$ 's transition\n\nprobability distribution over the set of effects $E$ in the system (normalized to range from $[0,1])$ :\n\n$$\n\\text { determinism }=1-\\frac{H(E \\mid c)}{\\log _{2} n}\n$$\n\nwherein the central entropy term is\n\n$$\n## H(E \\mid c)=\\sum_{e \\in E} \\operatorname{suff}(e, c) \\log _{2} \\frac{1}{\\operatorname{suff}(e, c)}\n$$\n\nIn what follows, the term \"determinism\" is reserved for the systemwide determinism coefficient, which is the average of the above determinism of an individual cause, given $P(C)$. Determinism is maximal only if the TPM consists of \"one hot\" rows, and is zero only if all rows are uniform distributions (i.e., transitions are random).\n\"Degeneracy\" is also a system-wide degeneracy coefficient, defined as the inverse of the entropy over the probability distribution of the full set of effects, $P(E)$, given $P(C)$ :\n\n$$\n\\text { degeneracy }=1-\\frac{H(E \\mid C)}{\\log _{2}(n)}\n$$\n\nDegeneracy is high if causes have many similar effects. Degeneracy is zero when all causes have a unique effect. In Markov chains, a fully deterministic and non-degenerate system would be one in which every state transitions with $p=1$ to some unique next state, with zero overlap (a permutation matrix). Degeneracy acts as an inclusive inverse of the necessity, in that\n\n$$\n## H(E \\mid C)=\\sum_{e \\in E} P(e \\mid C) \\log _{2} \\frac{1}{P(e \\mid C)}\n$$\n\nwherein $P(e \\mid C)$ is the inclusive form of the central term of the necessity calculation $P(e \\mid C, \\neg c)$. Instead of removing the cause $(\\neg c)$, it calculates, for any given $e$, how necessary the possible causes that lead to it are overall, out of the full set of $P(C)$.\n\nIn order to avoid linguistic confusions around inverses (since a low degeneracy indicates a stronger causal relationship), here during calculations the degeneracy is often reversed into the specificity, for which increasing values indicate stronger causal relationships:\n\n$$\n\\text { specificity }=1-\\text { degeneracy. }\n$$\n\nTo summarize: as can be seen by their construction from the same basic probability terms, determinism is essentially the normalized entropy of the sufficiencies and degeneracy is essentially the normalized entropy of the necessities (as its inverse, and calculated inclusively).\n\nThe causal primitives and their generalizations are sensitive to the uncertainty in a causal model's relationships regarding causes and effects, and behave similarly when uncertainty is decreased or increased, making them suitable foundations for detecting macroscale causation. In S1 in the SI, their sensitivity and similarity are demonstrated via simulations of probability redistribution within a system."
+    },
+    {
+      "id": 4,
+      "title": "3 Quantifying macroscale causation in CE 2.0",
+      "content": "# 3 Quantifying macroscale causation in CE 2.0\n\nCE 2.0 defines macroscale causation as when the causal primitives (CP) are jointly greater at a macroscale of a system, indicating that the macroscale has reduced the uncertainty about causes and effects. Note that not all dimension reductions result in macroscales reflecting gains in CP - many lead to zero gains or even decreases (cases of causal reduction). To identify positive gains, CE 2.0 makes use of an ordered micro $\\rightarrow$ macro path that traverses the hierarchy of scales of a system, revealing its multiscale structure. The degree of causal emergence in a system is the total gain in CP along a micro $\\rightarrow$ macro path, representing the sum of macroscale causation across all scales. This causation is then apportioned along the path to track which scales have positive causal contributions (the degree to which they increase CP).\n\n### 3.1 Traversing the hierarchy of scales with a micro $\\rightarrow$ macro path\n\nMacroscales are defined in CE 2.0 as the result of some dimension reduction of a system. For a given Markov chain, $S$, and its associated TPM, which represents the microscale, some new system $S_{M}$ is defined with its own associated TPM, with macrostates replacing a set of microstates, wherein the transitions to and from a given macrostate are a summary statistic of the underlying microstates.\n\nFor simplicity, here I only consider dimension reductions that are coarsegrains of microstates. Coarse-grains result in macroscales like $(0,1,2),(3)$, which would indicate that for some 4 -state system the microstates $(0,1,2)$ have been coarse-grained into a macrostate, while (3) remains as it was at the microscale. This method follows previous research on causal emergence\n\n(for full details on how to derive a macroscale's TPM based on a coarsegraining of the microscale's TPM, see $[9,18]$ ).\n\nAll coarse-grains were checked to ensure their validity as accurate descriptions of their underlying microscale; specifically, much as in [18], the dynamical consistency of each macroscale was checked, and inconsistent macroscales were discarded (see S2 in the SI). Note that, CE 2.0 can also be applied over other types of dimension reductions similar to coarse-graining, like black-boxing $[10,38]$ or higher-order macrostates $[18]$.\n\nA micro $\\rightarrow$ macro path is the set of valid (i.e., dynamically consistent) scales that lead from the microscale up to a final macroscale, which acts as the endpoint of the path. Conceptually, a path is simply specifying what coarse-grains of the system are \"on the way\" to other coarse-grains across the hierarchy of scales that spans the system. Each step in the path is a single \"slice\" of the set of all possible scales, which the micro $\\rightarrow$ macro path traverses from bottom (full dimensionality) to top (final dimension reduction).\n\nIn a hypothetical 4 -state system, the coarse-grain of $(0,1),(2),(3)$ would be on a path to the lower-dimensionality coarse-grain of $(0,1,2),(3)$. Along such a path, the microstates ( 0 ) and (1) would first be coarse-grained together into a single macrostate, $(0,1)$, and then further coarse-grained into $(0,1,2)$. A full micro $\\rightarrow$ macro path for such a hypothetical 4 -state system, starting at a microscale, might be $(0),(1),(2),(3) \\rightarrow(0,1),(2),(3)$ $\\rightarrow(0,1,2),(3) \\rightarrow(0,1,2,3)$, ending with all states coarse-grained into one macrostate. Formally, this is just:\n\n$$\n\\pi^{(1)} \\longrightarrow \\pi^{(2)} \\longrightarrow \\cdots \\longrightarrow \\pi^{(k)}\n$$\n\nwherein each $\\pi^{(i)}$ is some valid partition (representing a coarse-grain) of the original $n$ microstates, and $\\pi^{(i+1)}$ is a coarse-grain in turn of $\\pi^{(i)}$, concluding at the endpoint, partition $\\pi^{(k)}$.\n\nAs an example, a chosen micro $\\rightarrow$ macro path is plotted for the 8 -state Markov chain visualized in Figure 1. Progress along the path is shown in Figure 1 via color contagion. Beginning at $(0),(1),(2),(3),(4),(5),(6),(7)$, the microscale, microstates coarse-grained together along the path are changed to be the same color at each coarse-graining step until the endpoint of $(0),(1,2,3,4,5,6,7)$, wherein all microstates have been coarse-grained together, except $(0)$.\n\n![img-0.jpeg](img-0.jpeg)\n\nFigure 1: A micro $\\rightarrow$ macro path visualized. An example 8state Markov chain, with the probabilities of transitions represented in grayscale (for its TPM, see Fig.2A). Starting at the full partition of $(0),(1),(2),(3),(4),(5),(6),(7)$ (the microscale) states are coarse-grained together, with each further partition being a step in the path (and thus a scale in the system), ending at $(0),(1,2,3,4,5,6,7)$. Changes to being the same color indicate when states are coarse-grained together along the chosen path (color contagion)."
+    },
+    {
+      "id": 5,
+      "title": "3.2 Causal apportioning along a path",
+      "content": "# 3.2 Causal apportioning along a path\n\nThe distributions of gains in CP due to dimensionality reduction, calculated at each scale along a path, can be found via a causal apportioning schema. Specifically, for a system and a chosen micro $\\rightarrow$ macro path, CE 2.0 calculates $\\Delta \\mathrm{CP}$ at each step in the path, compared to the previous scale.\n\nSpecifically, for a given scale (each step in the path) the CP value is the sufficiency and the necessity of the macroscale (or microscale, at the start of the path) added together-then 1 was subtracted from this value, to provide a bound of $[0,1]$. Just the same, the CP value of the determinism and specificity was also calculated at each step by adding them together and subtracting 1 (making this value equivalent to the effectiveness from CE 1.0 $[9])$.\n\n## Calculating the $\\Delta \\mathrm{CP}$ along a path is demonstrated in an 8 -state Markov\n\nchain, the starting microscale TPM of which is shown in Fig. 2A. It has an intuitive macrostate in the form of an equivalency class across microstates $(4,5,6,7)$, which all share identical probability distributions of transitions. Its connectivity (state transitions) is the same as visualized in Figure 1, and the same chosen micro $\\rightarrow$ macro path is used.\n![img-1.jpeg](img-1.jpeg)\n\nFigure 2: Causal primitives along a micro $\\rightarrow$ macro path. (A) The TPM of the microscale, with cells colored based on their probability ( $p=1$ being a darker blue). (B) The TPM of the macroscale past which $\\Delta \\mathrm{CP}$ transitions abruptly to zero. (C) The same macroscale visualized as a Markov chain, with the coarse-grained macrostate labeled (its self-loop of $p=1$ is not shown). (D) The change in causal primitives across the path of increasing dimension reduction, with the total gain in CP of 0.33 (in terms of determinism plus specificity) reflecting the degree of causal emergence.\n\n## Notably, in this system CP shows consistent gains until the intuitive\n\nmacroscale of $(4,5,6,7)$ are coarse-grained together into a single macrostate with a self-loop (the TPM of this macroscale is shown in Fig.2B, and is visualized in Fig.2C). Then the path immediately transitions to a domain of zero gains (plotted in Fig.2D).\n\nExpressed in terms of determinism plus specificity, the microscale starts at $\\mathrm{CP}=0.66$, and at the macroscale prior to the transition to zero gains this has increased by 0.33 , attaining a maximum value of $\\mathrm{CP}=1$, indicating that causal relationships become maximally deterministic and non-degenerate at that macroscale, and further coarse-graining entails no further gains. The degree of causal emergence in this system is therefore $\\mathrm{CE}=0.33$, reflecting the total gain along the path."
+    },
+    {
+      "id": 6,
+      "title": "3.3 Choosing micro $\\rightarrow$ macro paths",
+      "content": "# 3.3 Choosing micro $\\rightarrow$ macro paths\n\nWhen analyzing the causal emergence of a system, there may be prior reasons to pick a certain path; however, an appropriate micro $\\rightarrow$ macro path can also be identified in a first-principles manner.\n\nSpecifically, the endpoint of the micro $\\rightarrow$ macro path can be chosen as the macroscale which entails the highest total gain in CP possible (the maximum causal emergence). In the case where there are multiple possible endpoints tied for the highest gain, the macroscale representing the lowest amount of dimensionality reduction is the optimal endpoint, as it indicates the point past which dimensionality reduction does not lead to gains in CP. Once the endpoint is identified, the maximally-informative micro $\\rightarrow$ macro path to analyze $\\Delta \\mathrm{CP}$ along is the longest path across the set of consistent macroscales (with consistency defined as in S2 in the SI) ranging from the microscale to the endpoint macroscale.\n\nThe macroscale which serves as the endpoint can be identified in a brute-force search by first generating all possible macroscales, discarding those which are inconsistent, calculating their CP , and then choosing the macroscale with the highest CP and highest dimensionality as the endpoint to the path.\n\nIn practice, this is not feasible for larger systems, and heuristics are required. One is to coarse-grain along a path until diminishing returns are reached. To put this formally, there is a sequence of incremental gains $\\Delta \\mathrm{CP}_{i}$ at each step $i$ in the path. The system enters \"diminishing returns\" at step $i^{*}$ if $\\Delta \\mathrm{CP}_{i^{*}}<\\varepsilon$ (for some small threshold $\\varepsilon>0$ ), or if the ratio $\\Delta \\mathrm{CP}_{i+1} / \\Delta \\mathrm{CP}_{i}$ consistently decreases over a long path length.\n\nIn other words, once $\\Delta \\mathrm{CP}$ becomes negligible (below $\\varepsilon$ ) or keeps shrinking step-by-step for some long portion of the path, that indicates a transi-\n\ntion point to diminishing returns and an approximate endpoint that does not leave out substantial gains in CP. However, care must be taken to not simply stop at local maxima (see Section 4) by choosing a small enough $\\varepsilon$ or a long enough path length to assess diminishing returns.\n\nFor a bound of the amount of causal emergence in a system prior to defining a path or even any macroscales, one can simply measure CP at the microscale. Its distance from 1 provides an upper bound for CE without the need to search across scales, allowing for quick estimations. If the CP of the microscale is significantly less than 1 , it is likely that there is some dimension reduction (like a coarse-grain) that increases it to at or near maximum; therefore, the difference between the CP of the microscale and 1 may approximate the CE value for many systems (but does not specify which macroscale the gain comes from). It is even possible that for large enough systems with enough structure there is always some macroscale where CP approaches 1, especially when taking into account the full set of dimension reductions, like Higher Order Macrostates [18], or when relaxing consistency assumptions."
+    },
+    {
+      "id": 7,
+      "title": "4 The emergent complexity",
+      "content": "# 4 The emergent complexity\n\nTraditionally, a main motivation of the field of complexity science is the qualitative notion that there is intuitive macroscale or mesoscale structure to the system beyond the microscale. Specific quantitative methods for detecting macroscale or mesoscale structure have focused mainly on compressibility or efficiency [39], or more recently, by assessing the info-theoretic surprise [40]. However, this means that the mesoscales detected may just be convenient compressions and have no causal relevance.\n\nIn comparison, by analyzing the distribution of causal contributions, CE 2.0 can be used to quantify the emergent complexity that's actually causally relevant for the workings of the system. Specifically, the $\\Delta \\mathrm{CP}$ for each step along a path represents that scale's causal contribution to the total CP (which fully determines the system's causal workings) - and so its distribution along a path can be assessed. CE 2.0 therefore provides a taxonomy for how complex the causal workings of a system are: if they are mostly confined to a single scale (like either the microscale, or in that it is dominated by a \"top-heavy\" macroscale) then the system is simple, whereas if the system has intermediate mesoscales that also have substantial causal contributions, it is complex.\n\n![img-2.jpeg](img-2.jpeg)\n\nFigure 3: Causal contributions across scales. (A) Microscale TPM of a system with no mesoscale structure. (B) The same system visualized. (C) CE 2.0 identifies this system's causal contributions as \"top-heavy,\" in that the last dimension reduction contributes the most. (D) Microscale TPM of an otherwise similar system with mesoscale structure. (E) The mesoscale system visualized. (F) Causal contributions are shifted toward lesser dimension reductions, indicating a predominately multiscale causal structure; it therefore possesses more emergent complexity.\n\nTo demonstrate this novel aspect of CE 2.0, in Figure 3 two causally emergent systems are analyzed: one that has no mesoscale structure and one that does, but is otherwise as similar as possible.\n\nFig.3A shows the TPM of a system composed of an intuitive macroscale with no distinguishable mesoscale structure, wherein $(0,1,2,3)$ and $(4,5,6,7)$ have been coarse-grained into two respective macrostates. Indeed, the microstates coarse-grained into the two macrostates each make up an equivalency class (see Fig.3B for a visualization).\n\nAt each scale along the micro $\\rightarrow$ macro path, $\\Delta \\mathrm{CP}$ is tracked. Notably, for the first system, gains in CP along the micro $\\rightarrow$ macro path are clustered at the endpoint of the path (see Fig.3C). This indicates a \"top-heavy\" structure mostly composed of the causal contributions of the microscale (contributing 0.14 of the total CP ) and the endpoint of a large macroscale over the two equivalency classes (contributing 0.18). Together the microscale and macroscale account for the majority of the full CP value (.41) for the system, quantifying that its causal workings are dominated by those two scales.\n\nTo formally capture the taxonomy of \"top-heavy\" or \"bottom-heavy\" systems on one side, and systems with substantial mesoscale structure on the other side, here I introduce a notion of emergent complexity (EC). It is based on the entropy of the causal contributions along a path of length $L$. Given a set of gains $\\Delta \\mathrm{CP}_{i}$ at each step (excluding the microscale) $i=1,2, \\ldots, L$, then\n\n$$\np_{i}=\\frac{\\Delta \\mathrm{CP}_{i}}{\\sum_{j=1}^{L} \\Delta \\mathrm{CP}_{j}} \\quad \\text { for } i=1, \\ldots, L\n$$\n\nwhich ensures that $\\left\\{p_{1}, \\ldots, p_{L}\\right\\}$ is a probability distribution over the $L$ steps. To measure how \"spread out\" (multiscale) the gains are, the entropy is calculated\n\n$$\n\\mathrm{EC}=-\\sum_{i=1}^{L} p_{i} \\log _{2}\\left(p_{i}\\right)\n$$\n\nwhich equals $\\log _{2}(L)$ if all $\\Delta \\mathrm{CP}_{i}$ are equal (i.e., $p$ is uniform), and decreases when a small number of steps in the path dominate the total gains, reaching zero when a single emergent scale has a lone causal contribution. To compare paths of significantly different lengths, these values in turn can be normalized by $\\log _{2}(L)$.\n\nTo demonstrate how this method detects mesoscale structure, a similar system is modeled in Fig.3D-E, but with the change that (0) and (4) are distinguishable (in terms of their state transitions) from the other of members they are coarse-grained together with at their endpoint macrostate, $(0,1,2,3)$ and $(4,5,6,7)$, respectively. That is, for this system the largest\n\ndimension reduction that contributes gains to CP is not over a pure equivalency class.\n\nIn this mesoscale system (with a total CE of 0.13 at the endpoint where $(0,1,2,3)$ and $(4,5,6,7)$ are macrostates), there is a visible earlier maxima when the causal contributions along the path are plotted (Fig.3F). Because of this earlier maximum in terms of $\\Delta \\mathrm{CP}$, the emergent complexity of the mesoscale system is 2.07 bits, whereas the emergent complexity of the \"topheavy\" system is only 1.67 bits. That is, mesoscales are revealed by how $\\Delta \\mathrm{CP}$ peaks at a higher dimensionality than the endpoint."
+    },
+    {
+      "id": 8,
+      "title": "5 Limitations and heuristics",
+      "content": "# 5 Limitations and heuristics\n\nA limitation of CE 2.0 is that, in its current formulation, it assumes a particular chosen micro $\\rightarrow$ macro path to define a hierarchy of scales. This initial formulation makes practical and conceptual sense; especially since a single path might often be desired for analysis. However, work remains in developing a causal apportioning schema that can integrate the full set of non-commensurate micro $\\rightarrow$ macro paths; potential opportunities are in the development of a causal apportioning schema that operates across the full set of partitions, making use of tools like the Möbius inversion [41] or the Shapley values [42].\n\nA more practical limitation for CE 2.0 is that traversing the set of macroscales of a system entails a combinatorial explosion. Previous heuristics exist for CE 1.0 [16, 17] (and in continuous systems [43]), including most recently the work by Zhang et al. [22], which proposed using the singular value decomposition (SVD) as a precise way to estimate the gain in EI available at some macroscale without having to search across the full set of scales (and thus avoiding the associated combinatorial explosion). This work also highlighted the importance of dynamical reversibility to causal emergence, in that their measure of dynamical reversibility behaved very similarly to the determinism and degeneracy (indicating that the causal primitives have a joint relationship to reversibility).\n\nTherefore, in the Supplementary Information herein a novel heuristic for CE 2.0 is explored, based on adapting their SVD method. As detailed in S3, this method can detect the differences in multiscale structure of the systems compared in Section 4 without requiring a search across macroscales, indicating that the CE 2.0 analysis, such as the causal emergence and the emergent complexity, can be estimated without combinatorial explosions."
+    },
+    {
+      "id": 9,
+      "title": "6 Comparison to other theories of emergence",
+      "content": "# 6 Comparison to other theories of emergence\n\nCE 2.0 has many advantages as a theory: (a) it is axiomatically grounded in the most foundational terms of causal analysis and is robust to the assumptions within that analysis, (b) it captures all possible cases of macroscale causation, which CE 1.0 does not, and (c) it elucidates the multiscale causal structure of systems in a novel manner, resolving longstanding conflicts around over-determination and causal exclusion. Here, these advantages are considered and demonstrated.\n\n### 6.1 An axiomatic grounding\n\nAs discussed, the EI's use in CE 1.0 has been previously criticized on the basis of being drawn from a maximum entropy (uniform) distribution [24] (here, represented by some $P(C)$ ) [25, 26]. The critical issue was that CE 1.0 required this assumption of the EI to detect causal emergence-and indeed, a theory of causal emergence should not be reliant on the assumptions behind the EI calculation. This would impact both its practical uses and also its theoretical foundations. In some cases, like in Integrated Information Theory, the maximum entropy distribution can be further justified as a function of taking the \"intrinsic perspective\" on a system [21], but this is reliant on accepting the postulates of IIT, including its analysis of consciousness.\n\nIn CE 2.0 it is also recommended that a uniform distribution is used for $P(C)$. This is because not allowing $P(C)$ to differ between scales would imply counterfactuals and interventions at a macroscale cannot be calculated independently from their microscale; a nonsensical outcome for most causal models of science (e.g., assessing the strength of the causal relationship between a light switch and a light bulb would entail weighting by the total atoms in each, etc.).\n\nHowever, unlike in CE 1.0, this recommendation for $P(C)$ is not required to detect causal emergence. Indeed, gains in CP at the macroscale have been shown to be robust to choice of $P(C)$, to the degree of gains even occurring when using the observed distribution at both the microscale and macroscale [27]. This advantage can also be seen directly in Figure 4, wherein the $P(C)$ of both the microscale and the macroscale are the observed distributions at the respective scales, and thus the macroscale's $P(C)$ is itself directly a coarse-grain of the $P(C)$ of the microscale (meaning any description of intervention distributions are equivalent between the scales). Yet CE 2.0 still detects macroscale causation under those conditions.\n\nIn sum, CE 2.0 is more theoretically robust than CE 1.0 was, by virtue\n\nof being grounded in causal primitives that historically have shown to be fundamental to the nature of causation and by detecting causal emergence across diverse background assumptions in how the causal analysis is performed."
+    },
+    {
+      "id": 10,
+      "title": "6.2 CE 2.0 captures all macroscale causation",
+      "content": "# 6.2 CE 2.0 captures all macroscale causation\n\nCE 2.0 can detect cases of macroscale causation that the CE 1.0 framework does not.\n\nExamples of this detection are shown in an 8 -state system that is constructed of two equivalency classes, making it a \"block model\" at the microscale (see Fig. 4A, left). A single macroscale is specified, wherein the two equivalency classes are each coarse-grained into a respective macrostate with a self-loop, represented by the coarse-grain $(0,1,2,3),(4,5,6,7)$. Causal emergence as calculated via CE 1.0 (based on the gain in EI at the macroscale) and the causal emergence as calculated via CE 2.0 (based on the gain in CP at the macroscale) is shown across a manipulation of that system.\n\nStarting with the initial TPM shown in Fig.4A (left), the probabilities within each equivalency class for each state $s_{i}$ are manipulated such that, over 50 steps, the probabilities that were previously transitioning to the other members of the equivalency class are added incrementally to the selfloop probability of $s_{i}$, eventually reaching $p=1$. The midpoint of this manipulation is shown in Fig.4A (middle), and the final ending system is the TPM in Fig.4A (right). This progresses the system via discrete steps of probability redistribution from an initial \"block model\" configuration to a permutation matrix in the form of a set of 8 microstates with self-loops of $p=1$.\n\nAt each step calculations from CE 1.0 are shown based on the EI, compared to the gain in CP as in CE 2.0 (with an endpoint of the fixed chosen macroscale). Counterintuitively, the EI from CE 1.0 detects no causal emergence, even when the system is initially split into two equivalency classes. Meanwhile, when viewed from the new lens of CE 2.0, the system in Figure 4 sensibly starts with a significant degree of macroscale causation. This degree then decreases in accordance with the increasing self-loop probabilities and the increasing distinguishability of the microscale, becoming weaker and weaker as the macroscale contributes marginally less, until it vanishes altogether when the microscale becomes perfectly deterministic and nondegenerate.\n\n![img-3.jpeg](img-3.jpeg)\n\nFigure 4: CE 1.0 cannot capture all macroscale causation. (A) TPMs (probabilities shown in bluescale) of a \"block model\" system with two macrostates over its equivalency classes at the beginning, midpoint, and end of increasing the self-loop probabilities of each state. Redistribution is performed by drawing away probability from its full set of transitions via increments of $1 /$ steps until the microscale is entirely composed of states with self-loops of $p=1$. (B) CE 2.0 detects the macroscale causation and decreases sensibly as the microscale becomes more causally distinguishable during the probability redistribution, while the EI does not.\n\nIn some cases, CE 1.0 and CE 2.0 will overlap (e.g., the scale right before $\\Delta \\mathrm{CP}$ transitions to being zero in Figure 4 is the same as would be picked out by searching for the maximum of EI). This is because CE 1.0 and CE 2.0 share a close mathematical connection in their terms, since the EI has a\n\ndecomposition wherein:\n\n$$\n## E I=\\text { effectiveness } * \\log _{2} n\n$$\n\nThat is, the EI can be decomposed into the determinism minus the degeneracy (the effectiveness), which is then multiplied by a size term, $\\log _{2} n$, which in turn is just the dimensionality of the given scale (its number of states) [9]. However, in CE 2.0, the size term is rendered unnecessary by appropriate multiscale structure analysis and causal apportioning.\n\nWhile CE 2.0 focuses on $\\Delta \\mathrm{CP}$, if a single causally-relevant scale with high dimensionality is desired for causal modeling or explanation, its methods can be used to pick one out: the individual macroscale that maximizes CP with the smallest amount of dimensionality reduction. This can be done either by analyzing for diminishing returns in $\\Delta \\mathrm{CP}$, as described in Section 3.3, or even via explicit re-introduction of the size term against which to weigh gains in CP, flexibly re-capturing the analysis of CE 1.0."
+    },
+    {
+      "id": 11,
+      "title": "6.3 Comparison to other related theories of emergence",
+      "content": "# 6.3 Comparison to other related theories of emergence\n\nAlternative proposals have been suggested for different ways to detect causal emergence, or emergence more generally, such as via integrated information decomposition [44], or via examining dynamical dependency [45]. However, both these proposals make use of the mutual information. This is problematic for causal emergence, as it is definitional of causation that it is not dependent on simply the data distribution of the process being measured [37]. For example, in a cycle of COPY gates, the mutual information scales entirely off of how varied the initial state is, rather than capturing the fact that every gate is sufficient and necessary for the next step in the chain in the way the causal primitives do $[22,27]$.\n\nOther recent work on emergence has focused on identifying cases wherein macroscales are consistent with their underlying microscales, but still independently describable in their dynamics, like the software of a computer [29]. Such efforts have examined whether or not a macroscale is \"causally closed\" in that it can can be thought of as being its own cause. This is closely related to the condition of macroscale consistency based on random walkers laid out here and (to a less strict degree) previously as well [18]. However, merely checking for consistency, lumpability, causal closure, etc, does not directly measure causal emergence, as it does not reflect what a macroscale contributes to a system's causal workings above and beyond the microscale, which requires some specified measure of causation (or here, gains in the causal primitives that underly such measures). Rather, it merely identifies\n\nwhich macroscales are valid descriptions of their microscale that preserve its dynamics and therefore are appropriate compressions. E.g. for the system analyzed in Figure 4, the largest dimension reduction at the end the prechosen path is a valid macroscale, completely consistent with its microscale, and yet has trivially zero causal contribution."
+    },
+    {
+      "id": 12,
+      "title": "6.4 Conceptual implications of CE 2.0",
+      "content": "# 6.4 Conceptual implications of CE 2.0\n\nAll of science, outside of microphysics, implicitly operates as if there is causal emergence, in that it takes for granted the macroscale entities in its models and explanations and experiments are efficacious regarding a system's causal workings. This is contradicted by a nominal commitment to universal reductionism, which would seem to imply that all causal powers \"drain away\" to the bottom microscale of any system [46, 47]. This is an effect of the causal exclusion argument [48]-for any given supervening macroscale, its effect could also be described as a cause of its underlying microscale, which then renders the macroscale description unnecessary.\n\nCE 1.0 flipped the exclusion argument on its head by noting that, according to the EI, the macroscale had greater causal power. A similar sort of thinking underlies the exclusion postulate in Integrated Information Theory (which is perhaps the most controversial of the postulates [49]). But it meant that in CE 1.0 there was the counterintuitive result that, even when macrostates were not over exact equivalency classes, the underlying microscale could itself be excluded; a surprising result with unclear epistemological and ontological implications.\n\nComparatively, in CE 2.0 causal exclusion is handled more gracefully. When viewed from the current analysis of a single path, macroscales do not override the causation of the microscale (although the microscale's causal contribution can still be vanishingly small). Instead, they simply contribute additional causal power via the causal apportioning schema, leading to a more comprehensive mereology wherein individual scales are a lossy slice of a higher-dimensional object that contains all the relevant information about the system's causal workings.\n\nWhile other theories of emergence often posit that certain macroscale properties or laws are not even in-principle reducible to the microscale, and therefore physics is not \"causally closed\" (e.g., [50, 51, 52]), this remains a controversial requirement for theories of emergence [53, 54]. Comparatively, causal emergence can occur even when macroscales are fully reducible to their microscales (like the models herein), as macroscales reduce uncertainty in causal relationships regardless. That is, even when macroscales\n\nthemselves are reducible, their gains in causal primitives are by definition not. The source of these gains beyond the microscale is non-mysterious, being based in uncertainty reduction [10, 55], which in turn stems from the multiple-realizability of macrostates [3].\n\nSince in CE 2.0 emergence occurs via this minimization of uncertainty at macroscales, there is the broader question of whether uncertainty (in the form of noise or common causes) exists merely epistemically when it comes to the causal models of science and the systems they represent. Answering this involves speculation about unknowns like the scientific end-state of physics [3]. Even small sources of true uncertainty (like indeterminism) can be amplified in chaotic systems, and there may even be provably undecidable physical systems [56]. Even if all uncertainty inherent to the causal relationships of scientific causal models did turn out to be only in principle epistemic, this would hold only for closed causal models that span the entire universe, and in such a universe-size causal model all notion of causation disappears entirely anyway, as there are no definable interventions from outside the model [11]. So while causal emergence vanishes in the condition of a microscale possessing zero uncertainty about the effect of causes, and also possessing no common causes (e.g., like a permutation matrix), such conditions entail a far departure from most causal models in science."
+    },
+    {
+      "id": 13,
+      "title": "7 Conclusion",
+      "content": "# 7 Conclusion\n\nCE 2.0 provides a conceptually and mathematically novel theory of emergence that treats systems as a hierarchy of scales. Individual scales, even in most cases the microscale, are simply slices of a higher-dimensional objectbut only a slim minority of these scales are causally relevant, and the theory can identify them, revealing the hierarchy that matters to a system's causal workings.\n\nSpecifically, the theory shows how macroscale causation is measurable via the gain in information-theoretic generalizations of the causal primitives (sufficiency and necessity) along a specified path that traverses the possible dimension reductions of a system. Causal emergence is the sum of this gain, and causal contributions can be apportioned out along the path. The theory reveals a novel taxonomy wherein some systems are \"top-heavy\" in terms of their causation, like when a single macroscale dominates, whereas others have more mesoscale structure. The emergent complexity calculation quantifies how widely spread out across the hierarchy of scales causal contributions are.\n\nThe theory's initial formulation, based on a single path that traverses dimension reductions, does have some limitations. It does not specify how to apportion across multiple paths, and it faces combinatorial explosions in application. However, how to address these limitations is relatively clear (see Section 5 for a discussion of pathless approaches, and see S3 for the proposal of a heuristic for CE 2.0's analysis).\n\nCE 2.0 has critical applications in fields like physics, biology, neuroscience, and economics. Here, it's also worth highlighting one new particular use case: Given the axiomatic importance of causal primitives for understanding causation in complex systems, and given previous research showing the EI is responsive to changes following learning in artificial neural networks [57], CE 2.0 may also be primed to contribute to the growing field of AI interpretability [58] and AI safety [59], such as analyzing the multiscale structure of deep neural networks."
+    },
+    {
+      "id": 14,
+      "title": "8 Acknowledgments",
+      "content": "# 8 Acknowledgments\n\nThank you to Softmax for funding the development of CE 2.0 and the writing of this paper. Thanks as well to Adam Goldstein and Emmett Shear for valuable feedback on the draft, and also to Michael Levin for encouragement and conversations."
+    },
+    {
+      "id": 15,
+      "title": "Supplementary Information",
+      "content": "# Supplementary Information\n\n## S1 Causal primitives (and their generalizations) are sensitive to noise and common causes.\n\nPrevious research on causal consilience has already shown that, due to their close mathematical relationship, the sufficiency and necessity over a set of two transitions behaves similarly to their information-theoretic generations, determinism and degeneracy, in conditions of increasing uncertainty [27]. Here, their similarity is shown with a larger set of transitions.\n\nSpecifically, a system composed of 8 states with self-loops of $p=1$ was specified (see Fig.S1, top left). In order to vary the uncertainty about causes and effects, noise (uncertainty about effects) and common causes (uncertainty about causes), were introduced along two separate axes. The first axis increased uncertainty about effects by shifting the system down to a condition of complete randomness in terms of its transitions (an all-to-all Markov chain wherein all transitions $=1 / n$, which means the system behaves as unpredictably as possible). The second axis, uncertainty about causes, moved the system to the condition wherein all transitions had an identical set of effects (thus increasing the number of common causes).\n\nFor every step along the axis that increased the noise, the probability from each self-loop was redistributed equally across the other states in the system, with the total amount of probability redistributed being $1 /$ steps each step. For every step along the axis that increased the number of common causes, the full set of transitions for a state (a row in the TPM) were replaced one at a time with a duplication of the first row until all distributions were the same. Changing the model along just this latter axis began with all states having unique state-transitions and ended with all states transitioning to a single state (see Fig.S1, bottom left). Finally, these two axes of changes to the system were combined such that at every step, both more noise in effects was introduced, and at the same step, more common causes were introduced (see Fig.S1, middle diagonal).\n\nAt each step, the system-wide sufficiency plus the necessity was calculated for each state, as well as the determinism plus the specificity, along the increasing uncertainty in effects axis (Fig.S2A), along the increasing common causes axis (Fig.S2B), as well as along both axes combined (Fig.S2C). As in the main text, this is done in a way to ensure the same $[0,1]$ bounds (See Section 3.2).\n\n![img-4.jpeg](img-4.jpeg)\n\nFigure S1: Increasing uncertainty in the causal relationships of an 8 -state system. Starting in a state of self-loops with $p=1$, states in the network were changed over a set number of steps equal to the size (number of states) of the system in three ways. Along the x -axis, self-loop probabilities were reduced by $1 /$ steps and distributed equally to the other states (thus increasing the uncertainty of a particular effect, given a cause) until the system was an all-to-all network with random transitions. Along the yaxis, at each step a state was replaced with the transition distributions of another state (increasing the number of common causes and thus increasing the uncertainty of a cause, given an effect), until all states in the system shared the same transition. The system was also subjected to both changes at each step (the middle diagonal), ending again in an all-to-all state of random transitions.\n\nNotably, all CP values changed similarly along both axes of steps that increased uncertainty about causes and effects, even in larger systems (values for 100 states and 100 steps are also shown in Fig. 2D).\n![img-5.jpeg](img-5.jpeg)\n\nFigure S2: Causal primitives vary together with uncertainty. (A) The sufficiency plus necessity value and the determinism plus specificity value are shown to behave similarly across increasing uncertainty over effects (noise) as the probabilities of self-loops in the system (visualized in Figure S1) are redistributed across the system in increasing steps. (B) Similar behavior in response to increases in common causes (overlap). (C) Similar behavior in response to increases in both noise and overlap. (D) The measures still behave similarly as the system becomes larger and more steps are added."
+    },
+    {
+      "id": 16,
+      "title": "S2 Calculating dynamical consistency across scales.",
+      "content": "# S2 Calculating dynamical consistency across scales.\n\nNot all macroscales are sensible summaries of their underlying microscale; indeed, some macroscales may be dynamically inconsistent when defined [60]. Much as in Klein and Hoel [18], here I deem a macroscale valid if it is consistent with its underlying microscale, with consistency being defined as whether the path of random walkers on the Markov chain is the same at\n\nboth the microscale and the macroscale (i.e., whether or not the macroscale acts as an accurate summary statistic for the microscale's dynamics).\n\nSpecifically, for a Markov chain the inconsistency can be defined as the Kullback-Leibler divergence [61], taken between an expected distribution of random walkers, across timesteps $t \\rightarrow t_{n}$, in $S$ vs. $S_{M}$, given an identical starting state on each scale. While previous research checked only the stationary distributions for such inconsistency [18], here I enforce a strict notion of consistency, wherein a random walker is dropped at every possible state, and inconsistency between the macroscale and the microscale is summed over all of their moves for the next 5 timesteps. Any non-zero values imply inconsistent macroscales, which are discarded. Therefore, all macroscales considered herein are fully consistent with the dynamics of their underlying microscales."
+    },
+    {
+      "id": 17,
+      "title": "S3 Heuristics for the CE 2.0 framework via the SVD",
+      "content": "# S3 Heuristics for the CE 2.0 framework via the SVD\n\nZhang et al. [22] proposed a \"vague\" causal emergence calculation based on applying the singular value decomposition (SVD) to Markov chains. This is based in the average of the resultant singular values $(\\sigma \\mathrm{s})$, which they call $\\gamma$, and which they prove reflects the average dynamical reversibility across system states. It was also shown capable of approximating the determinism plus specificity used herein (for details, see [22]). As they noted, this indicates a connection between the causal primitives and dynamical reversibility.\n\nFurthermore, their research provided a way to approximate (quite precisely) the degree of causal emergence in the CE 1.0 framework (analogous to finding the macroscale with maximal EI). Specifically, they first identify a set of non-zero $\\sigma$ values, given some threshold, $\\epsilon$, and average these together $(\\bar{\\sigma})$. The difference between $\\gamma$ (the un-thresholded average) and $\\bar{\\sigma}$ is taken. When $\\epsilon$ is a small non-zero value, and so includes most non-zero $\\sigma$ values, this method can elegantly track the maximal increase available in EI at some possible macroscale, without have to search across the set of scales, and so offers a precise heuristic for the degree of causal emergence in the CE 1.0 framework without any combinatorial explosions (only requiring the TPM of the microscale).\n\nHere I show steps for how the SVD method can be adapted for the CE 2.0 framework (in which case, \"vague\" causal emergence becomes a specific value). To do this, the set of singular values can be used as proxies for directionalities of coarse-graining. The causal contributions of each direc-\n\ntionality (represented by each $\\sigma$ ) can then be calculated via an adaptation of the causal apportioning schemes detailed in Section 3.2.\n\nHere, unlike in [22], the initial trivial $\\sigma_{1}$ value is discarded, since it is always 1 or greater for any Markov chain and therefore reflects nothing about the causation of the system (assuming a set of $\\sigma$ values ordered by descending values). The average of the remaining values, here called $\\gamma *$, closer approximates the causal primitives of a system. This can be seen via the same simulations previously detailed in S1 of manipulating a system along increasing axes of uncertainty in its effects (via noise), as well as uncertainty in its causes (via common causes). For the same manipulation in the same system as S1, Fig. S3A plots the original state-averaged dynamical reversibility $\\gamma$ from [22] against the new $\\gamma *$, and shows how they behave compared to the causal primitives. $\\gamma *$ behaves very similarly to the determinism plus specificity (including, e.g., becoming zero when the system is at full randomness, while $\\gamma$ does not).\n\nThese adaptations put the SVD method more in line with the CE 2.0 framework. In this adaptation of the SVD method for CE 2.0, the total amount of causal emergence can be estimated as the highest-available gain that is non-trivial: $\\sigma_{2}-\\gamma *$. When calculated in the \"block model\" system as in Figure. 4 of the main text, across the same scheme of probability redistribution, this value behaves similarly to the total gain in CP (plotted in Fig. S3B). In fact, in the initial configuration of the system prior to probability redistribution, the total gain of CP (in terms of sufficiency plus necessity) at the macroscale is actually identical to the $\\sigma_{2}-\\gamma *$ value.\n\nFor comparison, the values applying the \"vague\" causal emergence from [22] are shown. Since that method approximates the gains in EI, it inherits some of the same limitations of the CE 1.0 framework. For instance, during probability redistribution of this type within a macroscale, the measure is mathematically unstable, reducing to zero following any probability redistribution of this kind within a macrostate (see Figure S3B for a plotted value, where using a low $\\epsilon$ to include most non-zero $\\sigma$ values is labeled \"CE 1.0 (SVD)\").\n\n![img-6.jpeg](img-6.jpeg)\n\nFigure S3: Adapting the SVD method to CE 2.0 is demonstrated across two different models of probability redistribution (A) For the same steps of increasing noise and common causes in the same system as in S1, the CP values are again plotted, but also the proposed changes to the averaged dynamical reversibility, wherein $\\gamma *$ is used instead of $\\gamma *$. (B) Plotting the measures for a different case probability redistribution, this time the same as in Figure 4 of the main text. There, a \"block model\" consisting of two equivalency classes has its probabilities redistributed until it is entirely composed of self-loops. Plotted in black are the values when using the dynamical reversibility method detailed in [22] to calculate causal emergence during this probability redistribution. Just as when using the EI, the measure detects no macroscale causation in most configurations. However, when using the adaptation of the SVD method for CE 2.0 proposed herein, the total gain $\\left(\\sigma_{2}-\\gamma^{*}\\right)$ operates similarly to the total gain in the causal primitives (compare to Fig. 4 in the main text).\n\nFurthermore, applying a version of the causal apportioning schema enables an SVD-based assessment of multiscale causal structure. Specifically, each $\\sigma$ (excluding $\\sigma_{1}$ ) can be compared to the average of the remaining values, $\\gamma *$. Causal contributions can be assessed for all $\\sigma_{i}$ (where $2 \\leq i \\leq n$ ) that are positive, and thus satisfy:\n\n$$\n\\sigma_{i}>\\frac{1}{n-1} \\sum_{j=2}^{n} \\sigma_{j}\n$$\n\nThis way of using the SVD to identify the unique causal contributions of different scales was tested on the multiscale structure of the model systems used in Section 4 of the main text. For the first system in Figure 3 of the main text (Fig.3A-C), which lacks multiscale structure, this method results in just a single positive value from the multiscale SVD analysis:\n\n0.61 , indicating a single top-heavy macroscale (agreeing with the path-based analysis from the main text). Meanwhile, the second system (Fig.3D-F), which does have mesoscale structure, has three positive values: $0.489,0.06$, 0.06 , indicating the presence of one or more mesoscales.\n\nUltimately, these results indicates that adapting the SVD method designed for the CE 1.0 framework in [22] is a promising heuristic for the CE 2.0 analysis. It has the advantage of avoiding combinatorial explosions, in that both the total gain in causal primitives at a macroscale, and the causal contributions of different scales themselves, can be estimated directly based on just the TPM of the microscale. However, it is important to note that this is just one proposal for how to adapt CE 2.0 for the SVD framework, and future research may either fully explicate this method or propose alternatives."
+    },
+    {
+      "id": 18,
+      "title": "References",
+      "content": "# References\n\n[1] Geoffrey West. Scale: The universal laws of life, growth, and death in organisms, cities, and companies. Penguin, 2018.\n[2] Denis Noble. A theory of biological relativity: no privileged level of causation. Interface focus, 2(1):55-64, 2012.\n[3] Erik Hoel. The world behind the world: Consciousness, Free Will, and the Limits of Science. Simon and Schuster, 2024.\n[4] Matteo Grasso, Larissa Albantakis, Jonathan P Lang, and Giulio Tononi. Causal reductionism and causal structures. Nature neuroscience, 24(10):1348-1355, 2021.\n[5] Erik P Hoel. Agent above, atom below: how agents causally emerge from their underlying microphysics. Wandering towards a goal: how can mindless mathematical laws give rise to aims and intention?, pages $63-76,2018$.\n[6] Jessica C Flack. Coarse-graining as a downward causation mechanism. Philosophical Transactions of the Royal Society A: Mathematical, Physical and Engineering Sciences, 375(2109):20160338, 2017.\n[7] Hans Albert Braun. Stochasticity versus determinacy in neurobiology: From ion channels to the question of the \"free will\". Frontiers in Systems Neuroscience, 15:629436, 2021.\n\n[8] Peter Jedlicka. Revisiting the quantum brain hypothesis: toward quantum (neuro) biology? Frontiers in molecular neuroscience, 10:366, 2017 .\n[9] Erik P Hoel, Larissa Albantakis, and Giulio Tononi. Quantifying causal emergence shows that macro can beat micro. Proceedings of the National Academy of Sciences, 110(49):19790-19795, 2013.\n[10] Erik P Hoel. When the map is better than the territory. Entropy, 19(5):188, 2017.\n[11] Judea Pearl. Causality. Cambridge university press, 2009.\n[12] Thomas F Varley. Causal emergence in discrete and continuous dynamical systems. arXiv preprint arXiv:2003.13075, 2020.\n[13] Mingzhe Yang, Zhipeng Wang, Kaiwei Liu, Yingqi Rong, Bing Yuan, and Jiang Zhang. Finding emergence in data by maximizing effective information. National Science Review, 12(1):nwae279, 2025.\n[14] Federico Pigozzi, Adam Goldstein, and Michael Levin. Associative conditioning in gene regulatory network models increases integrative causal emergence.\n[15] Erik Hoel and Michael Levin. Emergence of informative higher scales in biological systems: a computational toolkit for optimal prediction and control. Communicative $\\mathcal{E}$ Integrative Biology, 13(1):108-118, 2020.\n[16] Ross Griebenow, Brennan Klein, and Erik Hoel. Finding the right scale of a network: efficient identification of causal emergence through spectral clustering. arXiv preprint arXiv:1908.07565, 2019.\n[17] Jiang Zhang and Kaiwei Liu. Neural information squeezer for causal emergence. Entropy, 25(1):26, 2022.\n[18] Brennan Klein and Erik Hoel. The emergence of informative higher scales in complex networks. Complexity, 2020(1):8932526, 2020.\n[19] Brennan Klein, Erik Hoel, Anshuman Swain, Ross Griebenow, and Michael Levin. Evolution and emergence: higher order information structure in protein interactomes across the tree of life. Integrative Biology, 13(12):283-294, 2021.\n\n[20] Erik P Hoel, Larissa Albantakis, William Marshall, and Giulio Tononi. Can the macro beat the micro? integrated information across spatiotemporal scales. Neuroscience of Consciousness, 2016(1):niw012, 2016 .\n[21] William Marshall, Graham Findlay, Larissa Albantakis, and Giulio Tononi. From micro to macro units: a mathematical framework for identifying the causal grain of a system from its intrinsic perspective. bioRxiv, pages 2024-04, 2024.\n[22] Jiang Zhang, Ruyi Tao, Keng Hou Leong, Mingzhe Yang, and Bing Yuan. Dynamical reversibility and a new theory of causal emergence based on svd. npj Complexity, 2(1):3, 2025.\n[23] Bing Yuan, Jiang Zhang, Aobo Lyu, Jiayun Wu, Zhipeng Wang, Mingzhe Yang, Kaiwei Liu, Muyun Mou, and Peng Cui. Emergence and causality in complex systems: A survey of causal emergence and related quantitative studies. Entropy, 26(2):108, 2024.\n[24] David Balduzzi. Information, learning and falsification. arXiv preprint arXiv:1110.3592, 2011.\n[25] Frederick Eberhardt and Lin Lin Lee. Causal emergence: When distortions in a map obscure the territory. Philosophies, 7(2):30, 2022.\n[26] Scott Aaronson. Higher-level causation exists (but I wish it didn't), jun 2017.\n[27] Renzo Comolatti and Erik Hoel. Causal emergence is widespread across measures of causation. arXiv preprint arXiv:2202.01854, 2022.\n[28] Rafael Yuste. From the neuron doctrine to neural networks. Nature reviews neuroscience, 16(8):487-497, 2015.\n[29] Fernando E Rosas, Bernhard C Geiger, Andrea I Luppi, Anil K Seth, Daniel Polani, Michael Gastpar, and Pedro AM Mediano. Software in the natural world: A computational approach to emergence in complex multi-level systems. arXiv preprint arXiv:2402.09090, 2024.\n[30] Andrés Gómez-Emilsson and Chris Percy. The \"slicing problem\" for computational theories of consciousness. Open Philosophy, 5(1):718736, 2022 .\n\n[31] Joshua Bongard and Michael Levin. There's plenty of room right here: Biological systems as evolved, overloaded, multi-scale machines. Biomimetics, 8(1):110, 2023.\n[32] Helen Beebee, Christopher Hitchcock, Peter Charles Menzies, and Peter Menzies. The Oxford handbook of causation. Oxford Handbooks Online, 2009 .\n[33] Lloyd D Fisher. Advances in clinical trials in the twentieth century. Annual Review of Public Health, 20(1):109-124, 1999.\n[34] David Lewis. Causation. The journal of philosophy, 70(17):556-567, 1973 .\n[35] Branden Fitelson and Christopher Hitchcock. Probabilistic measures of causal strength.\n[36] Larissa Albantakis, William Marshall, Erik Hoel, and Giulio Tononi. What caused what? a quantitative account of actual causation using dynamical causal networks. Entropy, 21(5):459, 2019.\n[37] Judea Pearl and Dana Mackenzie. The book of why: the new science of cause and effect. Basic books, 2018.\n[38] William Marshall, Larissa Albantakis, and Giulio Tononi. Black-boxing and cause-effect power. PLoS computational biology, 14(4):e1006114, 2018 .\n[39] Carlos Gershenson and Nelson Fernández. Complexity and information: Measuring emergence, self-organization, and homeostasis at multiple scales. Complexity, 18(2):29-44, 2012.\n[40] Emiliano Marchese, Guido Caldarelli, and Tiziano Squartini. Detecting mesoscale structures by surprise. Communications Physics, 5(1):132, 2022 .\n[41] Abel Jansma. Mereological approach to higher-order structure in complex systems: From macro to micro with möbius. Physical Review Research, 7(2):023016, 2025.\n[42] Eyal Winter. The shapley value. Handbook of game theory with economic applications, 3:2025-2054, 2002.\n[43] Pavel Chvykov and Erik Hoel. Causal geometry. Entropy, 23(1):24, 2020 .\n\n[44] Fernando E Rosas, Pedro AM Mediano, Henrik J Jensen, Anil K Seth, Adam B Barrett, Robin L Carhart-Harris, and Daniel Bor. Reconciling emergences: An information-theoretic approach to identify causal emergence in multivariate data. PLoS computational biology, 16(12):e1008289, 2020.\n[45] Lionel Barnett and Anil K Seth. Dynamical independence: discovering emergent macroscopic processes in complex dynamical systems. Physical Review E, 108(1):014304, 2023.\n[46] Thomas D Bontly. The supervenience argument generalizes. Philosophical Studies, 109:75-96, 2002.\n[47] Ned Block. Do causal powers drain away? Philosophy and Phenomenological Research, 67(1):133-150, 2003.\n[48] Jaegwon Kim. Mind in a physical world: An essay on the mind-body problem and mental causation. MIT press, 2000.\n[49] Tim Bayne. On the axiomatic foundations of the integrated information theory of consciousness. Neuroscience of consciousness, 2018(1):niy007, 2018.\n[50] Philip W Anderson. More is different: Broken symmetry and the nature of the hierarchical structure of science. Science, 177(4047):393-396, 1972 .\n[51] George FR Ellis. The causal closure of physics in real world contexts. Foundations of Physics, 50(10):1057-1097, 2020.\n[52] JM Fritzman. Collapsing strong emergence's collapse problem. European Journal for Philosophy of Science, 14(2):24, 2024.\n[53] Sean Carroll. The big picture: on the origins of life, meaning, and the universe itself. Penguin, 2017.\n[54] Sean M Carroll and Achyuth Parola. What emergence can possibly mean. arXiv preprint arXiv:2410.15468, 2024.\n[55] Kaiwei Liu, Bing Yuan, and Jiang Zhang. An exact theory of causal emergence for linear stochastic iteration systems. arXiv preprint arXiv:2405.09207, 2024.\n\n[56] Robert Cardona, Eva Miranda, Daniel Peralta-Salas, and Francisco Presas. Constructing turing complete euler flows in dimension 3. Proceedings of the National Academy of Sciences, 118(19):e2026818118, 2021 .\n[57] Scythia Marrow, Eric J Michaud, and Erik Hoel. Examining the causal structures of deep neural networks using information theory. Entropy, $22(12): 1429,2020$.\n[58] Adly Templeton. Scaling monosemanticity: Extracting interpretable features from claude 3 sonnet. Anthropic, 2024.\n[59] Seth Lazar and Alondra Nelson. Ai safety on whose terms?, 2023.\n[60] Paul K Rubenstein, Sebastian Weichwald, Stephan Bongers, Joris M Mooij, Dominik Janzing, Moritz Grosse-Wentrup, and Bernhard Schölkopf. Causal consistency of structural equation models. arXiv preprint arXiv:1707.00819, 2017.\n[61] Thomas M Cover. Elements of information theory. John Wiley \\& Sons, 1999 ."
+    }
+  ],
+  "pdf_images": {
+    "pdf_path": "inbox/2503.13395v3.pdf",
+    "total_pages": 35,
+    "pages": [
+      {
+        "page_number": 1,
+        "filename": "page-001.png",
+        "thumb_filename": "page-001-thumb.png",
+        "mobile_filename": "page-001-mobile.png",
+        "mobile_thumb_filename": "page-001-mobile-thumb.png",
+        "width": 1275,
+        "height": 1650,
+        "mobile_width": 2550,
+        "mobile_height": 3300
+      },
+      {
+        "page_number": 2,
+        "filename": "page-002.png",
+        "thumb_filename": "page-002-thumb.png",
+        "mobile_filename": "page-002-mobile.png",
+        "mobile_thumb_filename": "page-002-mobile-thumb.png",
+        "width": 1275,
+        "height": 1650,
+        "mobile_width": 2550,
+        "mobile_height": 3300
+      },
+      {
+        "page_number": 3,
+        "filename": "page-003.png",
+        "thumb_filename": "page-003-thumb.png",
+        "mobile_filename": "page-003-mobile.png",
+        "mobile_thumb_filename": "page-003-mobile-thumb.png",
+        "width": 1275,
+        "height": 1650,
+        "mobile_width": 2550,
+        "mobile_height": 3300
+      },
+      {
+        "page_number": 4,
+        "filename": "page-004.png",
+        "thumb_filename": "page-004-thumb.png",
+        "mobile_filename": "page-004-mobile.png",
+        "mobile_thumb_filename": "page-004-mobile-thumb.png",
+        "width": 1275,
+        "height": 1650,
+        "mobile_width": 2550,
+        "mobile_height": 3300
+      },
+      {
+        "page_number": 5,
+        "filename": "page-005.png",
+        "thumb_filename": "page-005-thumb.png",
+        "mobile_filename": "page-005-mobile.png",
+        "mobile_thumb_filename": "page-005-mobile-thumb.png",
+        "width": 1275,
+        "height": 1650,
+        "mobile_width": 2550,
+        "mobile_height": 3300
+      },
+      {
+        "page_number": 6,
+        "filename": "page-006.png",
+        "thumb_filename": "page-006-thumb.png",
+        "mobile_filename": "page-006-mobile.png",
+        "mobile_thumb_filename": "page-006-mobile-thumb.png",
+        "width": 1275,
+        "height": 1650,
+        "mobile_width": 2550,
+        "mobile_height": 3300
+      },
+      {
+        "page_number": 7,
+        "filename": "page-007.png",
+        "thumb_filename": "page-007-thumb.png",
+        "mobile_filename": "page-007-mobile.png",
+        "mobile_thumb_filename": "page-007-mobile-thumb.png",
+        "width": 1275,
+        "height": 1650,
+        "mobile_width": 2550,
+        "mobile_height": 3300
+      },
+      {
+        "page_number": 8,
+        "filename": "page-008.png",
+        "thumb_filename": "page-008-thumb.png",
+        "mobile_filename": "page-008-mobile.png",
+        "mobile_thumb_filename": "page-008-mobile-thumb.png",
+        "width": 1275,
+        "height": 1650,
+        "mobile_width": 2550,
+        "mobile_height": 3300
+      },
+      {
+        "page_number": 9,
+        "filename": "page-009.png",
+        "thumb_filename": "page-009-thumb.png",
+        "mobile_filename": "page-009-mobile.png",
+        "mobile_thumb_filename": "page-009-mobile-thumb.png",
+        "width": 1275,
+        "height": 1650,
+        "mobile_width": 2550,
+        "mobile_height": 3300
+      },
+      {
+        "page_number": 10,
+        "filename": "page-010.png",
+        "thumb_filename": "page-010-thumb.png",
+        "mobile_filename": "page-010-mobile.png",
+        "mobile_thumb_filename": "page-010-mobile-thumb.png",
+        "width": 1275,
+        "height": 1650,
+        "mobile_width": 2550,
+        "mobile_height": 3300
+      },
+      {
+        "page_number": 11,
+        "filename": "page-011.png",
+        "thumb_filename": "page-011-thumb.png",
+        "mobile_filename": "page-011-mobile.png",
+        "mobile_thumb_filename": "page-011-mobile-thumb.png",
+        "width": 1275,
+        "height": 1650,
+        "mobile_width": 2550,
+        "mobile_height": 3300
+      },
+      {
+        "page_number": 12,
+        "filename": "page-012.png",
+        "thumb_filename": "page-012-thumb.png",
+        "mobile_filename": "page-012-mobile.png",
+        "mobile_thumb_filename": "page-012-mobile-thumb.png",
+        "width": 1275,
+        "height": 1650,
+        "mobile_width": 2550,
+        "mobile_height": 3300
+      },
+      {
+        "page_number": 13,
+        "filename": "page-013.png",
+        "thumb_filename": "page-013-thumb.png",
+        "mobile_filename": "page-013-mobile.png",
+        "mobile_thumb_filename": "page-013-mobile-thumb.png",
+        "width": 1275,
+        "height": 1650,
+        "mobile_width": 2550,
+        "mobile_height": 3300
+      },
+      {
+        "page_number": 14,
+        "filename": "page-014.png",
+        "thumb_filename": "page-014-thumb.png",
+        "mobile_filename": "page-014-mobile.png",
+        "mobile_thumb_filename": "page-014-mobile-thumb.png",
+        "width": 1275,
+        "height": 1650,
+        "mobile_width": 2550,
+        "mobile_height": 3300
+      },
+      {
+        "page_number": 15,
+        "filename": "page-015.png",
+        "thumb_filename": "page-015-thumb.png",
+        "mobile_filename": "page-015-mobile.png",
+        "mobile_thumb_filename": "page-015-mobile-thumb.png",
+        "width": 1275,
+        "height": 1650,
+        "mobile_width": 2550,
+        "mobile_height": 3300
+      },
+      {
+        "page_number": 16,
+        "filename": "page-016.png",
+        "thumb_filename": "page-016-thumb.png",
+        "mobile_filename": "page-016-mobile.png",
+        "mobile_thumb_filename": "page-016-mobile-thumb.png",
+        "width": 1275,
+        "height": 1650,
+        "mobile_width": 2550,
+        "mobile_height": 3300
+      },
+      {
+        "page_number": 17,
+        "filename": "page-017.png",
+        "thumb_filename": "page-017-thumb.png",
+        "mobile_filename": "page-017-mobile.png",
+        "mobile_thumb_filename": "page-017-mobile-thumb.png",
+        "width": 1275,
+        "height": 1650,
+        "mobile_width": 2550,
+        "mobile_height": 3300
+      },
+      {
+        "page_number": 18,
+        "filename": "page-018.png",
+        "thumb_filename": "page-018-thumb.png",
+        "mobile_filename": "page-018-mobile.png",
+        "mobile_thumb_filename": "page-018-mobile-thumb.png",
+        "width": 1275,
+        "height": 1650,
+        "mobile_width": 2550,
+        "mobile_height": 3300
+      },
+      {
+        "page_number": 19,
+        "filename": "page-019.png",
+        "thumb_filename": "page-019-thumb.png",
+        "mobile_filename": "page-019-mobile.png",
+        "mobile_thumb_filename": "page-019-mobile-thumb.png",
+        "width": 1275,
+        "height": 1650,
+        "mobile_width": 2550,
+        "mobile_height": 3300
+      },
+      {
+        "page_number": 20,
+        "filename": "page-020.png",
+        "thumb_filename": "page-020-thumb.png",
+        "mobile_filename": "page-020-mobile.png",
+        "mobile_thumb_filename": "page-020-mobile-thumb.png",
+        "width": 1275,
+        "height": 1650,
+        "mobile_width": 2550,
+        "mobile_height": 3300
+      },
+      {
+        "page_number": 21,
+        "filename": "page-021.png",
+        "thumb_filename": "page-021-thumb.png",
+        "mobile_filename": "page-021-mobile.png",
+        "mobile_thumb_filename": "page-021-mobile-thumb.png",
+        "width": 1275,
+        "height": 1650,
+        "mobile_width": 2550,
+        "mobile_height": 3300
+      },
+      {
+        "page_number": 22,
+        "filename": "page-022.png",
+        "thumb_filename": "page-022-thumb.png",
+        "mobile_filename": "page-022-mobile.png",
+        "mobile_thumb_filename": "page-022-mobile-thumb.png",
+        "width": 1275,
+        "height": 1650,
+        "mobile_width": 2550,
+        "mobile_height": 3300
+      },
+      {
+        "page_number": 23,
+        "filename": "page-023.png",
+        "thumb_filename": "page-023-thumb.png",
+        "mobile_filename": "page-023-mobile.png",
+        "mobile_thumb_filename": "page-023-mobile-thumb.png",
+        "width": 1275,
+        "height": 1650,
+        "mobile_width": 2550,
+        "mobile_height": 3300
+      },
+      {
+        "page_number": 24,
+        "filename": "page-024.png",
+        "thumb_filename": "page-024-thumb.png",
+        "mobile_filename": "page-024-mobile.png",
+        "mobile_thumb_filename": "page-024-mobile-thumb.png",
+        "width": 1275,
+        "height": 1650,
+        "mobile_width": 2550,
+        "mobile_height": 3300
+      },
+      {
+        "page_number": 25,
+        "filename": "page-025.png",
+        "thumb_filename": "page-025-thumb.png",
+        "mobile_filename": "page-025-mobile.png",
+        "mobile_thumb_filename": "page-025-mobile-thumb.png",
+        "width": 1275,
+        "height": 1650,
+        "mobile_width": 2550,
+        "mobile_height": 3300
+      },
+      {
+        "page_number": 26,
+        "filename": "page-026.png",
+        "thumb_filename": "page-026-thumb.png",
+        "mobile_filename": "page-026-mobile.png",
+        "mobile_thumb_filename": "page-026-mobile-thumb.png",
+        "width": 1275,
+        "height": 1650,
+        "mobile_width": 2550,
+        "mobile_height": 3300
+      },
+      {
+        "page_number": 27,
+        "filename": "page-027.png",
+        "thumb_filename": "page-027-thumb.png",
+        "mobile_filename": "page-027-mobile.png",
+        "mobile_thumb_filename": "page-027-mobile-thumb.png",
+        "width": 1275,
+        "height": 1650,
+        "mobile_width": 2550,
+        "mobile_height": 3300
+      },
+      {
+        "page_number": 28,
+        "filename": "page-028.png",
+        "thumb_filename": "page-028-thumb.png",
+        "mobile_filename": "page-028-mobile.png",
+        "mobile_thumb_filename": "page-028-mobile-thumb.png",
+        "width": 1275,
+        "height": 1650,
+        "mobile_width": 2550,
+        "mobile_height": 3300
+      },
+      {
+        "page_number": 29,
+        "filename": "page-029.png",
+        "thumb_filename": "page-029-thumb.png",
+        "mobile_filename": "page-029-mobile.png",
+        "mobile_thumb_filename": "page-029-mobile-thumb.png",
+        "width": 1275,
+        "height": 1650,
+        "mobile_width": 2550,
+        "mobile_height": 3300
+      },
+      {
+        "page_number": 30,
+        "filename": "page-030.png",
+        "thumb_filename": "page-030-thumb.png",
+        "mobile_filename": "page-030-mobile.png",
+        "mobile_thumb_filename": "page-030-mobile-thumb.png",
+        "width": 1275,
+        "height": 1650,
+        "mobile_width": 2550,
+        "mobile_height": 3300
+      },
+      {
+        "page_number": 31,
+        "filename": "page-031.png",
+        "thumb_filename": "page-031-thumb.png",
+        "mobile_filename": "page-031-mobile.png",
+        "mobile_thumb_filename": "page-031-mobile-thumb.png",
+        "width": 1275,
+        "height": 1650,
+        "mobile_width": 2550,
+        "mobile_height": 3300
+      },
+      {
+        "page_number": 32,
+        "filename": "page-032.png",
+        "thumb_filename": "page-032-thumb.png",
+        "mobile_filename": "page-032-mobile.png",
+        "mobile_thumb_filename": "page-032-mobile-thumb.png",
+        "width": 1275,
+        "height": 1650,
+        "mobile_width": 2550,
+        "mobile_height": 3300
+      },
+      {
+        "page_number": 33,
+        "filename": "page-033.png",
+        "thumb_filename": "page-033-thumb.png",
+        "mobile_filename": "page-033-mobile.png",
+        "mobile_thumb_filename": "page-033-mobile-thumb.png",
+        "width": 1275,
+        "height": 1650,
+        "mobile_width": 2550,
+        "mobile_height": 3300
+      },
+      {
+        "page_number": 34,
+        "filename": "page-034.png",
+        "thumb_filename": "page-034-thumb.png",
+        "mobile_filename": "page-034-mobile.png",
+        "mobile_thumb_filename": "page-034-mobile-thumb.png",
+        "width": 1275,
+        "height": 1650,
+        "mobile_width": 2550,
+        "mobile_height": 3300
+      },
+      {
+        "page_number": 35,
+        "filename": "page-035.png",
+        "thumb_filename": "page-035-thumb.png",
+        "mobile_filename": "page-035-mobile.png",
+        "mobile_thumb_filename": "page-035-mobile-thumb.png",
+        "width": 1275,
+        "height": 1650,
+        "mobile_width": 2550,
+        "mobile_height": 3300
+      }
+    ]
+  },
+  "metadata": {
+    "model": "gpt-4o",
+    "pdf_path": "inbox/2503.13395v3.pdf"
+  },
+  "attribution": {
+    "type": "arxiv",
+    "url": "https://arxiv.org/abs/2503.13395",
+    "id": "2503.13395"
+  }
+}
