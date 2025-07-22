@@ -168,8 +168,7 @@ function loadMobilePDF() {
     content.innerHTML = `
         <div style="text-align: center;">
             <img src="${imagePath}" alt="Page ${currentPageData.page_number}" 
-                 style="max-width: 100%; height: auto; border-radius: 4px; border: 1px solid #ddd; 
-                        touch-action: pinch-zoom;">
+                 style="max-width: 100%; height: auto; border-radius: 4px; border: 1px solid #ddd;">
         </div>
     `;
 }
