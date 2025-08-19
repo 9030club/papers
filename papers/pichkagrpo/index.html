@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group Relative Policy Optimization (GRPO) Illustrated Breakdown - RYO Analysis</title>
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+    <!-- Desktop Header -->
+    <header class="desktop-header">
+        <div class="header-left">
+            <h1><a href="../../index.html">9030club</a> / Group Relative Policy Optimization (GRPO) Illustrated Breakdown</h1>
+            <div class="filename-subtitle">pichka_grpo.pdf</div>
+        </div>
+        <div class="header-right">
+            <div class="mode-toggle">
+                <button class="mode-btn active" data-mode="markdown">markdown</button>
+                <button class="mode-btn" data-mode="pdf">pdf</button>
+                <button class="qr-btn" id="qr-btn" title="Show QR Code">
+                    <img src="../../assets/qr-code-icon.png" alt="QR Code" style="width: 16px; height: 16px;">
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Desktop 4-Column Layout -->
+    <main class="four-column-layout">
+        <section class="questions-column">
+            <ul class="question-list">
+                <li><button class="question-btn" data-question="1">1. What were they trying to do?</button></li>
+<li><button class="question-btn" data-question="2">2. Why does it matter?</button></li>
+<li><button class="question-btn" data-question="3">3. What did they try?</button></li>
+<li><button class="question-btn" data-question="4">4. Did it work?</button></li>
+<li><button class="question-btn" data-question="5">5. What did they compare it to?</button></li>
+<li><button class="question-btn" data-question="6">6. What was it tested on?</button></li>
+<li><button class="question-btn" data-question="7">7. What's cool about it?</button></li>
+<li><button class="question-btn" data-question="8">8. What's sketchy about it?</button></li>
+<li><button class="question-btn" data-question="9">9. Can anyone use this?</button></li>
+<li><button class="question-btn" data-question="10">10. What's still left to figure out?</button></li>
+
+            </ul>
+        </section>
+        
+        <section class="answers-column">
+            <div class="answer-content">
+                <p class="placeholder">Click a question to see the answer</p>
+            </div>
+        </section>
+        
+        <section class="page-column">
+            <div class="page-content">
+                <h3>Group Relative Policy Optimization (GRPO) Illustrated Breakdown</h3>
+<p><h1>Group Relative Policy Optimization (GRPO) Illustrated Breakdown</h1></p><p><h2>A simplified intro to GRPO, an efficient policy optimization method used for LLM reasoning training</h2></p><p><h2>AUTHORS AFFILIATIONS PUBLISHED</h2>
+<h2>Ebrahim Pichka</h2></p><p>- Jan. 29, 2025</p><p><h2>Contents</h2></p><p><h2>Introduction</h2>
+<h2>PPO vs GRPO</h2>
+<h2>GRPO: A Closer Look</h2>
+<h2>LLM as a Policy</h2>
+<h2>Sequential Token Generation</h2>
+<h2>Reward and Advantage Calculation</h2>
+<h2>The GRPO Objective</h2>
+<h2>Conclusion</h2>
+<h2>References</h2></p><p><h2>Introduction</h2></p><p>Reinforcement Learning (RL) has emerged as a powerful tool for enhancing Large Language Models (LLMs) after their initial training, particularly in reasoning-intensive tasks. DeepSeek's recent breakthroughs with DeepSeek-Math [2] and DeepSeek-R1 [3]</p><p>These achievements were made possible through an innovative RL approach called Group Relative Policy Optimization (GRPO), which addresses the unique challenges of applying RL to language models. In this post, we'll dive deep into how GRPO works and why it represents a significant advancement in LLM training.</p>
+            </div>
+        </section>
+        
+        <section class="thumbnails-column">
+            <ul class="thumbnail-list">
+                <li><button class="thumbnail-btn" data-page="1">1. Group Relative Policy Optimization (GRPO) Illustrated Breakdown</button></li>
+<li><button class="thumbnail-btn" data-page="2">2. PPO vs GRPO</button></li>
+<li><button class="thumbnail-btn" data-page="3">3. GRPO: A Closer Look</button></li>
+<li><button class="thumbnail-btn" data-page="4">4. Reward and Advantage Calculation</button></li>
+<li><button class="thumbnail-btn" data-page="5">5. The GRPO Objective</button></li>
+<li><button class="thumbnail-btn" data-page="6">6. References</button></li>
+
+            </ul>
+        </section>
+    </main>
+    
+    <!-- Mobile Layout -->
+    <div class="mobile-layout">
+        <!-- Mobile Header -->
+        <header class="mobile-header">
+            <div class="mobile-title">
+                <h1><a href="../../index.html">9030club</a></h1>
+                <div class="mobile-paper-title">Group Relative Policy Optimization (GRPO) Illustrated Breakdown</div>
+                <div class="mobile-filename">pichka_grpo.pdf</div>
+            </div>
+            <button class="mobile-qr-btn" id="mobile-qr-btn" title="Show QR Code">
+                <img src="../../assets/qr-code-icon.png" alt="QR Code" style="width: 20px; height: 20px;">
+            </button>
+        </header>
+        
+        <!-- Mobile Navigation Container -->
+        <div class="mobile-nav-container">
+            <!-- Mobile Tab Navigation -->
+            <div class="mobile-tabs">
+                <button class="mobile-tab-btn active" data-tab="qa">QA</button>
+                <button class="mobile-tab-btn" data-tab="pdf">PDF</button>
+                <button class="mobile-tab-btn" data-tab="markdown">Markdown</button>
+            </div>
+            
+            <!-- Mobile Navigation Bar -->
+            <div class="mobile-nav" id="mobile-nav">
+                <button class="mobile-nav-btn" id="mobile-prev-btn">‹</button>
+                <div class="mobile-nav-info" id="mobile-nav-info">Q1 of 10</div>
+                <button class="mobile-nav-btn" id="mobile-next-btn">›</button>
+            </div>
+        </div>
+        
+        <!-- Mobile Content Area -->
+        <div class="mobile-content" id="mobile-content">
+            <div class="mobile-content-inner">
+                <p class="mobile-placeholder">Loading content...</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- QR Code Overlay -->
+    <div class="qr-overlay" id="qr-overlay">
+        <img src="qr-code.png" alt="QR Code" id="qr-image">
+    </div>
+    
+    <script src="../../assets/app.js"></script>
+    <script>
+        // Initialize with paper data
+        window.paperData = {"title": "Group Relative Policy Optimization (GRPO) Illustrated Breakdown", "slug": "pichkagrpo", "questions": {"1": {"question": "What were they trying to do?", "answer": "The main goal of the paper was to introduce and explore Group Relative Policy Optimization (GRPO), an innovative reinforcement learning method designed to enhance the training of Large Language Models (LLMs) for reasoning-intensive tasks. GRPO aims to improve upon existing methods like Proximal Policy Optimization (PPO) by eliminating the need for a value network and using group sampling for more efficient and stable advantage estimation, thereby making the training process more efficient and better suited for language models.", "timestamp": "2025-08-18 11:56:31"}, "2": {"question": "Why does it matter?", "answer": "The significance of Group Relative Policy Optimization (GRPO) lies in its ability to enhance the efficiency and stability of training Large Language Models (LLMs) for reasoning tasks. Firstly, it matters because it eliminates the need for a value network, reducing memory and computational requirements, which is crucial for the practical deployment of LLMs. Secondly, GRPO's group sampling and relative advantage estimation improve the stability and effectiveness of policy optimization, leading to better-performing models. On a broader scale, this advancement is important for the AI community and industries relying on LLMs, as it enables more sophisticated and efficient models, thereby pushing the boundaries of what AI can achieve in complex reasoning tasks. Ultimately, this contributes to the development of more capable AI systems that can be applied in various fields, from education to scientific research.", "timestamp": "2025-08-18 11:56:36"}, "3": {"question": "What did they try?", "answer": "The authors of the paper introduced Group Relative Policy Optimization (GRPO), an innovative reinforcement learning approach tailored for large language models (LLMs). GRPO builds on Proximal Policy Optimization (PPO) but eliminates the need for a value network, reducing memory and computational requirements. It employs group sampling to estimate advantages more efficiently and stably by normalizing rewards from multiple outputs of a reference policy. This method aims to optimize the policy model by maximizing a GRPO objective that includes clipping for conservative updates and a KL divergence penalty to prevent large deviations from the reference model.", "timestamp": "2025-08-18 11:56:47"}, "4": {"question": "Did it work?", "answer": "Yes, the idea worked. The implementation of Group Relative Policy Optimization (GRPO) led to significant advancements in training Large Language Models (LLMs) for reasoning tasks. The paper highlights the success of GRPO in the development of DeepSeek-Math and DeepSeek-R1, demonstrating practical benefits such as more efficient and stable training by eliminating the need for a value network and using group-relative advantage estimation.", "timestamp": "2025-08-18 11:56:49"}, "5": {"question": "What did they compare it to?", "answer": "The paper compares Group Relative Policy Optimization (GRPO) to Proximal Policy Optimization (PPO), which has been the standard for reinforcement learning fine-tuning of language models. GRPO is considered better because it eliminates the need for a value network, reducing memory and computational requirements, and uses group sampling for more efficient and stable advantage estimation. The success of GRPO is demonstrated through its application in projects like DeepSeek-Math and DeepSeek-R1, which showcase its practical benefits over previous methods.", "timestamp": "2025-08-18 11:56:57"}, "6": {"question": "What was it tested on?", "answer": "The paper tested the Group Relative Policy Optimization (GRPO) method on reasoning-intensive tasks using Large Language Models (LLMs). It demonstrated the effectiveness of GRPO through its application in the development of DeepSeek-Math and DeepSeek-R1, which are models designed to enhance mathematical reasoning and incentivize reasoning capabilities in LLMs, respectively. The evaluation setup involved using GRPO to optimize the policy model by sampling groups of outputs and maximizing the GRPO objective, which includes innovations like group sampling and relative advantage estimation.", "timestamp": "2025-08-18 11:57:01"}, "7": {"question": "What's cool about it?", "answer": "The novel aspect of Group Relative Policy Optimization (GRPO) lies in its innovative approach to reinforcement learning for large language models (LLMs). GRPO eliminates the need for a value network, reducing memory and computational requirements, and introduces group sampling for more efficient and stable advantage estimation. This method allows for more efficient training by averaging over groups and sequence lengths, using clipping for conservative updates, and incorporating a KL divergence penalty to maintain stability. These innovations make GRPO particularly well-suited for reasoning-intensive tasks in LLMs, as demonstrated by its success in projects like DeepSeek-Math and DeepSeek-R1.", "timestamp": "2025-08-18 11:57:06"}, "8": {"question": "What's sketchy about it?", "answer": "The paper presents several potential red flags and limitations. Firstly, it lacks empirical results or experimental validation of the GRPO method, which raises concerns about the practical effectiveness and generalizability of the approach. Additionally, the paper does not discuss potential drawbacks or limitations of eliminating the value network, such as possible impacts on the stability and convergence of the training process. Furthermore, the reliance on references to unpublished or inaccessible works (e.g., DeepSeek-Math and DeepSeek-R1) makes it difficult to verify the claims and innovations presented.", "timestamp": "2025-08-18 11:57:11"}, "9": {"question": "Can anyone use this?", "answer": "The Group Relative Policy Optimization (GRPO) method is designed to be more efficient and accessible than traditional approaches like Proximal Policy Optimization (PPO) by eliminating the need for a value network and using group sampling for stable advantage estimation. This reduces memory and computational requirements, making it more practical for training large language models (LLMs). However, its application is still likely limited to those with expertise in reinforcement learning and access to sufficient computational resources, as it is primarily used for enhancing LLMs in reasoning tasks.", "timestamp": "2025-08-18 11:57:15"}, "10": {"question": "What's still left to figure out?", "answer": "The paper highlights that while GRPO presents significant advancements in LLM training, there are still areas that remain unsolved or unclear. Specifically, the long-term impact of eliminating the value network on model performance and stability needs further exploration. Additionally, the paper opens up new questions regarding the scalability of GRPO to even larger models and more complex tasks, as well as the potential integration of other RL techniques to further enhance LLM reasoning capabilities.", "timestamp": "2025-08-18 11:57:19"}}, "markdown_pages": [{"id": 1, "title": "Group Relative Policy Optimization (GRPO) Illustrated Breakdown", "content": "# Group Relative Policy Optimization (GRPO) Illustrated Breakdown\n\n## A simplified intro to GRPO, an efficient policy optimization method used for LLM reasoning training\n\n## AUTHORS AFFILIATIONS PUBLISHED\n## Ebrahim Pichka\n\n- Jan. 29, 2025\n\n## Contents\n\n## Introduction\n## PPO vs GRPO\n## GRPO: A Closer Look\n## LLM as a Policy\n## Sequential Token Generation\n## Reward and Advantage Calculation\n## The GRPO Objective\n## Conclusion\n## References\n\n## Introduction\n\nReinforcement Learning (RL) has emerged as a powerful tool for enhancing Large Language Models (LLMs) after their initial training, particularly in reasoning-intensive tasks. DeepSeek's recent breakthroughs with DeepSeek-Math [2] and DeepSeek-R1 [3]\n\nThese achievements were made possible through an innovative RL approach called Group Relative Policy Optimization (GRPO), which addresses the unique challenges of applying RL to language models. In this post, we'll dive deep into how GRPO works and why it represents a significant advancement in LLM training."}, {"id": 2, "title": "PPO vs GRPO", "content": "# PPO vs GRPO\n\n![img-0.jpeg](img-0.jpeg)\n\nProximal Policy Optimization (PPO) [1] has been the go-to algorithm for RL fine-tuning of language models. At its core, PPO is a policy gradient method that uses clipping to limit policy updates (gradients), preventing destructive large policy changes. The objective function for PPO can be written as:\n$J_{P P O}(\\theta)=\\mathbb{E}\\left[s \\sim P(S), a \\sim \\pi_{\\theta_{\\text {old }}}(A \\mid s)\\right]\\left[\\min \\left(\\frac{\\pi_{\\theta}(a \\mid s)}{\\pi_{\\theta_{\\text {old }}}(a \\mid s)} A(s, a), \\operatorname{clip}\\left(\\frac{\\pi_{\\theta}(a \\mid s)}{\\pi_{\\theta_{\\text {old }}}(a \\mid s)}, 1-\\alpha\\right)\\right.\\right.$\nWhere GRPO, introduced in [2] builds upon PPO's foundation but introduces several key innovations that make it more efficient and better suited for language models:\n\n## 1. Eliminates the need for a value network, hence less memory/compute usage\n## 2. Uses group sampling for more efficient stable advantage estimation"}, {"id": 3, "title": "GRPO: A Closer Look", "content": "# GRPO: A Closer Look\n\n![img-1.jpeg](img-1.jpeg)\n\n## LLM as a Policy\n\nIn GRPO, the language model serves as the policy network (actor), taking a question $\\boldsymbol{q}$ as input observation $\\boldsymbol{s}$ and producing a sequence of tokens as actions. The policy distribution factors across tokens:\n\n$$\n\\pi_{\\theta}(a \\mid q)=\\prod_{t=1}^{N} \\pi_{\\theta}\\left(a_{t} \\mid q, a_{<t}\\right)\n$$\n\nNote: In the original paper [2], they use $\\boldsymbol{o}_{t}$ to denote the output token at timestep $t$. Whereas we use $a_{t}$ instead to conform with standard RL notation of action.\n\n## Sequential Token Generation\n\n![img-2.jpeg](img-2.jpeg)\n\nThe generation process is inherently sequential because of autoregressive nature of transformers/LLMs:\n\n## 1. Each token is generated conditionally on previous tokens\n## 2. The policy network (LLM) maintains a running context\n## 3. Each token generation step can be viewed as an action $a_{t}$ in the RL framework"}, {"id": 4, "title": "Reward and Advantage Calculation", "content": "# Reward and Advantage Calculation\n\n## For each generated sequence, GRPO computes per-token rewards as follows:\n\n$$\nr_{t}=r_{\\phi}\\left(q, a_{<t}\\right)-\\beta \\log \\frac{\\pi_{\\theta}\\left(a_{t} \\mid q, a_{<t}\\right)}{\\pi_{\\text {ref }}\\left(a_{t} \\mid q, a_{<t}\\right)}\n$$\n\nInstead of using a value network, GRPO estimates baseline advantages $\\boldsymbol{A}$ by normalizing a group (batch) of rewards obtained from sampling multiple different outputs from the reference policy produced in response to the same question as input. :"}, {"id": 5, "title": "The GRPO Objective", "content": "# The GRPO Objective\n\nfor each question $q$, GRPO samples a group of outputs $\\{\\sigma 1, \\sigma 2, \\cdots$, $o G\\}$ from the old policy $n$ Bold and then optimizes the policy model by maximizing the GRPO objective. The complete GRPO objective brings everything together:\n\n$$\nJ_{G R P O}(\\theta)=\\frac{1}{G} \\sum_{i=1}^{G} \\frac{1}{\\left|a_{i}\\right|} \\sum_{t=1}^{\\left|a_{i}\\right|}\\left\\{\\min \\left[\\frac{\\pi_{\\theta}\\left(a_{i, t} \\mid s, a_{i,<t}\\right)}{\\pi_{\\theta_{o l d}}\\left(a_{i, t} \\mid s, a_{i,<t}\\right)} \\hat{A}_{i, t}, \\operatorname{clip}\\left(\\frac{\\pi_{\\theta}\\left(a_{i, t} \\mid s, a_{i,<t}\\right)}{\\pi_{\\theta_{o l d}}\\left(a_{i, t} \\mid s, a_{i,<t}\\right)}, 1\\right.\\right.\n$$\n\n## This objective:\n\n## 1. Averages over both groups and sequence lengths\n## 2. Uses clipping for conservative updates\n3. Includes an estimate of the KL divergence as a penalty to prevent large deviations from the reference model\n\n$$\n\\begin{aligned}\n& J_{G R P O}(\\theta)=\\mathbb{E}\\left\\{z \\sim P(S),\\left\\{a_{i}\\right\\}_{i=1}^{G} \\sim \\pi_{\\theta_{o l d}}(A \\mid z)\\right\\} \\\\\n& \\frac{1}{G} \\sum_{i=1}^{G} \\frac{1}{\\left|a_{i}\\right|} \\sum_{t=1}^{\\left|a_{i}\\right|}\\left\\{\\min \\left\\{\\frac{\\pi_{\\theta}\\left(a_{i, t} \\mid s, a_{i, t}\\right)}{\\pi_{\\theta_{o l d}}\\left(a_{i, t} \\mid s, a_{i, t}\\right)}, \\hat{A}_{i, t}, \\operatorname{clip}\\left(\\frac{\\pi_{\\theta}\\left(a_{i, t} \\mid s, a_{i, t}\\right)}{\\pi_{\\theta_{o l d}}\\left(a_{i, t} \\mid s, a_{i, t}\\right)}, 1-c, 1+c\\right) A_{i, t}\\right\\}-\\beta D_{K L}\\left[\\pi_{\\theta} \\| \\pi_{r e f}\\right]\\right\\} \\\\\n& D_{K L}\\left[\\pi_{\\theta} \\| \\pi_{r e f}\\right]=\\frac{\\pi_{r e f}\\left(a_{i, t} \\mid q, a_{i, t}\\right)}{\\pi_{\\theta}\\left(a_{i, t} \\mid q, a_{i, t}\\right)}-\\log \\frac{\\pi_{r e f}\\left(a_{i, t} \\mid q, a_{i, t}\\right)}{\\pi_{\\theta}\\left(a_{i, t} \\mid q, a_{i, t}\\right)}-1\n\\end{aligned}\n$$\n\n## Conclusion\n\nGRPO represents a significant advancement in applying RL to language models. By eliminating the need for a value network and introducing group-relative advantage estimation, it provides a more efficient and stable training process. The success of DeepSeekMath and DeepSeek-R1 demonstrates the practical benefits of this approach.\n\nThe key innovations of GRPO - group sampling, relative advantage estimation, and the elimination of the value network - provide a blueprint for future developments in LLM training. As we continue"}, {"id": 6, "title": "References", "content": "# References\n\n[1] Schulman, John, et al. Proximal Policy Optimization Algorithms. arXiv:1707.06347, arXiv, 28 Aug. 2017. arXiv.org, https://doi.org/10.48550/arXiv. 1707.06347.\n[2] Shao, Zhihong, et al. DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models. arXiv:2402.03300, arXiv, 27 Apr. 2024. arXiv.org, https://doi.org/10.48550/arXiv.2402.03300.\n[3] DeepSeek-AI, et al. DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning. arXiv:2501.12948, arXiv, 22 Jan. 2025. arXiv.org,\nhttps://doi.org/10.48550/arXiv.2501.12948.\n\n## 0 reactions\n\n## 0 comments\n\n| Write | Preview | Aa |\n| :-- | :-- | :-- |\n| Sign in to comment |  |  |\n|  |  | $\\mathbf{m}$ |\n|  |  | Sign in with GitHub |"}], "pdf_images": {"pdf_path": "inbox/pichka_grpo.pdf", "total_pages": 6, "pages": [{"page_number": 1, "filename": "page-001.png", "thumb_filename": "page-001-thumb.png", "mobile_filename": "page-001-mobile.png", "mobile_thumb_filename": "page-001-mobile-thumb.png", "width": 1275, "height": 1650, "mobile_width": 2550, "mobile_height": 3300}, {"page_number": 2, "filename": "page-002.png", "thumb_filename": "page-002-thumb.png", "mobile_filename": "page-002-mobile.png", "mobile_thumb_filename": "page-002-mobile-thumb.png", "width": 1275, "height": 1650, "mobile_width": 2550, "mobile_height": 3300}, {"page_number": 3, "filename": "page-003.png", "thumb_filename": "page-003-thumb.png", "mobile_filename": "page-003-mobile.png", "mobile_thumb_filename": "page-003-mobile-thumb.png", "width": 1275, "height": 1650, "mobile_width": 2550, "mobile_height": 3300}, {"page_number": 4, "filename": "page-004.png", "thumb_filename": "page-004-thumb.png", "mobile_filename": "page-004-mobile.png", "mobile_thumb_filename": "page-004-mobile-thumb.png", "width": 1275, "height": 1650, "mobile_width": 2550, "mobile_height": 3300}, {"page_number": 5, "filename": "page-005.png", "thumb_filename": "page-005-thumb.png", "mobile_filename": "page-005-mobile.png", "mobile_thumb_filename": "page-005-mobile-thumb.png", "width": 1275, "height": 1650, "mobile_width": 2550, "mobile_height": 3300}, {"page_number": 6, "filename": "page-006.png", "thumb_filename": "page-006-thumb.png", "mobile_filename": "page-006-mobile.png", "mobile_thumb_filename": "page-006-mobile-thumb.png", "width": 1275, "height": 1650, "mobile_width": 2550, "mobile_height": 3300}]}, "metadata": {"model": "gpt-4o", "pdf_path": "inbox/pichka_grpo.pdf"}, "attribution": null};
+        initializeColumnInterface();
+    </script>
+</body>
+</html>
