@@ -133,14 +133,61 @@ function loadMobileQA() {
     
     // Load content
     const content = document.querySelector('.mobile-content-inner');
-    content.innerHTML = `
-        <div style="margin-bottom: 1rem;">
-            <h3 style="color: #0066cc; margin-bottom: 0.5rem;">Q${currentQuestionNum}: ${questionData.question}</h3>
-            <div style="padding: 1rem; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #0066cc;">
-                <p style="margin: 0; line-height: 1.6;">${questionData.answer}</p>
+    
+    // Special handling for core analysis (Q4)
+    if (currentQuestionNum === "4") {
+        const coreAnalysis = window.paperData.core_analysis;
+        if (coreAnalysis && coreAnalysis.output_data) {
+            const outputData = coreAnalysis.output_data;
+            content.innerHTML = `
+                <div style="margin-bottom: 1rem;">
+                    <h3 style="color: #FF8C00; margin-bottom: 0.5rem;">Q${currentQuestionNum}: ${questionData.question}</h3>
+                    <div style="padding: 1rem; background: #FFF8DC; border-radius: 8px; border-left: 4px solid #FF8C00;">
+                        <div class="core-analysis-content">
+                            <h4 style="color: #8B4513; margin-top: 0;">Core Contribution</h4>
+                            <p style="margin: 0 0 1rem 0; line-height: 1.6;">${outputData.core_contribution}</p>
+                            
+                            <h4 style="color: #8B4513;">Method Breakdown</h4>
+                            <p style="margin: 0 0 1rem 0; line-height: 1.6;">${outputData.method_breakdown}</p>
+                            
+                            <h4 style="color: #8B4513;">Subsystems/Parts</h4>
+                            <p style="margin: 0 0 1rem 0; line-height: 1.6;">${outputData.subsystems_parts}</p>
+                            
+                            <h4 style="color: #8B4513;">Interactions</h4>
+                            <p style="margin: 0 0 1rem 0; line-height: 1.6;">${outputData.interactions}</p>
+                            
+                            <h4 style="color: #8B4513;">Delta vs Baseline</h4>
+                            <p style="margin: 0 0 1rem 0; line-height: 1.6;">${outputData.delta_vs_baseline}</p>
+                            
+                            <h4 style="color: #8B4513;">Evidence Anchor</h4>
+                            <p style="margin: 0 0 1rem 0; line-height: 1.6;">${outputData.evidence_anchor}</p>
+                            
+                            <h4 style="color: #8B4513;">Transferability</h4>
+                            <p style="margin: 0; line-height: 1.6;">${outputData.transferability}</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+        } else {
+            content.innerHTML = `
+                <div style="margin-bottom: 1rem;">
+                    <h3 style="color: #0066cc; margin-bottom: 0.5rem;">Q${currentQuestionNum}: ${questionData.question}</h3>
+                    <div style="padding: 1rem; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #0066cc;">
+                        <p style="margin: 0; line-height: 1.6;">Core analysis not available. Run 'ryo dera-core' first.</p>
+                    </div>
+                </div>
+            `;
+        }
+    } else {
+        content.innerHTML = `
+            <div style="margin-bottom: 1rem;">
+                <h3 style="color: #0066cc; margin-bottom: 0.5rem;">Q${currentQuestionNum}: ${questionData.question}</h3>
+                <div style="padding: 1rem; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #0066cc;">
+                    <p style="margin: 0; line-height: 1.6;">${questionData.answer}</p>
+                </div>
             </div>
-        </div>
-    `;
+        `;
+    }
 }
 
 function loadMobilePDF() {
@@ -310,6 +357,35 @@ function setupThumbnailHandlers() {
             }
         });
     });
+    
+    // Setup collapse button for thumbnails column
+    const collapseBtn = document.getElementById('collapse-thumbnails');
+    if (collapseBtn) {
+        collapseBtn.addEventListener('click', toggleThumbnailsColumn);
+    }
+}
+
+function toggleThumbnailsColumn() {
+    const thumbnailsColumn = document.getElementById('thumbnails-column');
+    const layout = document.querySelector('.four-column-layout');
+    const collapseIcon = document.querySelector('.collapse-icon');
+    const collapseBtn = document.getElementById('collapse-thumbnails');
+    
+    console.log('Elements found:', { thumbnailsColumn, layout, collapseIcon, collapseBtn });
+    
+    if (thumbnailsColumn.classList.contains('collapsed')) {
+        // Expand
+        thumbnailsColumn.classList.remove('collapsed');
+        if (layout) layout.classList.remove('collapsed-thumbnails');
+        collapseIcon.textContent = '−';
+        collapseBtn.title = 'Collapse thumbnails';
+    } else {
+        // Collapse
+        thumbnailsColumn.classList.add('collapsed');
+        if (layout) layout.classList.add('collapsed-thumbnails');
+        collapseIcon.textContent = '+';
+        collapseBtn.title = 'Expand thumbnails';
+    }
 }
 
 function selectQuestion(questionNum) {
@@ -323,10 +399,48 @@ function selectQuestion(questionNum) {
     const questionData = window.paperData.questions[questionNum];
     if (questionData) {
         const answerContent = document.querySelector('.answer-content');
-        answerContent.innerHTML = `
-            <h4>Q${questionNum}: ${questionData.question}</h4>
-            <p>${questionData.answer}</p>
-        `;
+        
+        // Special handling for core analysis (Q4)
+        if (questionNum === "4") {
+            const coreAnalysis = window.paperData.core_analysis;
+            if (coreAnalysis && coreAnalysis.output_data) {
+                const outputData = coreAnalysis.output_data;
+                answerContent.innerHTML = `
+                    <div class="core-analysis-content">
+                        <h2>Core Contribution</h2>
+                        <p>${outputData.core_contribution}</p>
+                        
+                        <h2>Method Breakdown</h2>
+                        <p>${outputData.method_breakdown}</p>
+                        
+                        <h2>Subsystems/Parts</h2>
+                        <p>${outputData.subsystems_parts}</p>
+                        
+                        <h2>Interactions</h2>
+                        <p>${outputData.interactions}</p>
+                        
+                        <h2>Delta vs Baseline</h2>
+                        <p>${outputData.delta_vs_baseline}</p>
+                        
+                        <h2>Evidence Anchor</h2>
+                        <p>${outputData.evidence_anchor}</p>
+                        
+                        <h2>Transferability</h2>
+                        <p>${outputData.transferability}</p>
+                    </div>
+                `;
+            } else {
+                answerContent.innerHTML = `
+                    <h4>Q${questionNum}: ${questionData.question}</h4>
+                    <p>Core analysis not available. Run 'ryo dera-core' first.</p>
+                `;
+            }
+        } else {
+            answerContent.innerHTML = `
+                <h4>Q${questionNum}: ${questionData.question}</h4>
+                <p>${questionData.answer}</p>
+            `;
+        }
     }
     
     currentQuestion = questionNum;
