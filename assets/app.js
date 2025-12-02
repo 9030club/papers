@@ -35,6 +35,21 @@ function initializeColumnInterface() {
         loadMobileContent();
     }
     
+    // Process MathJax after initialization (in case MathJax is already loaded)
+    // Also set up a check for when MathJax becomes available
+    const processMathJax = () => {
+        if (window.MathJax && window.MathJax.typesetPromise) {
+            window.MathJax.typesetPromise();
+        }
+    };
+    
+    // Try immediately
+    processMathJax();
+    
+    // Also try after a short delay in case MathJax is still loading
+    setTimeout(processMathJax, 100);
+    setTimeout(processMathJax, 500);
+    
     // Hide PDF mode button if no PDF images available
     if (!window.paperData.pdf_images || !window.paperData.pdf_images.pages) {
         const pdfBtn = document.querySelector('[data-mode="pdf"]');
@@ -188,6 +203,11 @@ function loadMobileQA() {
             </div>
         `;
     }
+    
+    // Re-render MathJax after content is loaded
+    if (window.MathJax && window.MathJax.typesetPromise) {
+        window.MathJax.typesetPromise();
+    }
 }
 
 function loadMobilePDF() {
@@ -247,6 +267,16 @@ function loadMobileMarkdown() {
             </div>
         </div>
     `;
+    
+    // Re-render MathJax after content is loaded
+    const processMath = () => {
+        if (window.MathJax && window.MathJax.typesetPromise) {
+            window.MathJax.typesetPromise();
+        } else {
+            setTimeout(processMath, 100);
+        }
+    };
+    processMath();
 }
 
 function scrollContentToTop() {
@@ -441,6 +471,16 @@ function selectQuestion(questionNum) {
                 <p>${questionData.answer}</p>
             `;
         }
+        
+        // Re-render MathJax after content is loaded
+        const processMath = () => {
+            if (window.MathJax && window.MathJax.typesetPromise) {
+                window.MathJax.typesetPromise();
+            } else {
+                setTimeout(processMath, 100);
+            }
+        };
+        processMath();
     }
     
     currentQuestion = questionNum;
@@ -534,6 +574,18 @@ function loadMarkdownPage(pageNum) {
     `;
     
     currentPage = pageNum;
+    
+    // Re-render MathJax after content is loaded
+    // Wait for MathJax to be ready if it's still loading
+    const processMath = () => {
+        if (window.MathJax && window.MathJax.typesetPromise) {
+            window.MathJax.typesetPromise();
+        } else {
+            // MathJax not ready yet, try again after a short delay
+            setTimeout(processMath, 100);
+        }
+    };
+    processMath();
 }
 
 function loadPDFPage(pageNum) {
@@ -561,6 +613,7 @@ function loadPDFPage(pageNum) {
 
 function formatMarkdownContent(content) {
     // Basic markdown to HTML conversion
+    // Math formulas will be preserved as-is and processed by MathJax
     let html = content;
     
     // Headers
