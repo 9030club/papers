@@ -338,12 +338,11 @@ function selectQuestion(questionNum) {
     if (questionData) {
         const answerContent = document.querySelector('.answer-content');
 
-        if (questionNum === "11" && questionData.type === "core_analysis") {
-            // Format core analysis with markdown-like rendering
+        if (questionData.type === "core_analysis") {
+            // Format core analysis with markdown rendering
             answerContent.innerHTML = `
-                <h4>🎯 Core Analysis</h4>
                 <div class="core-analysis-content">
-                    ${questionData.answer}
+                    ${formatMarkdownContent(questionData.answer)}
                 </div>
             `;
         } else {
