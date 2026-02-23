@@ -39,20 +39,18 @@
         </div>
         <div class="header-right">
             <div class="mode-toggle">
-                <button class="mode-btn active" data-mode="markdown">markdown</button>
+                <button class="mode-btn active" data-mode="qa">qa</button>
+                <button class="mode-btn" data-mode="markdown">markdown</button>
                 <button class="mode-btn" data-mode="pdf">pdf</button>
                 <button class="qr-btn" id="qr-btn" title="Show QR Code">
                     <img src="../../assets/qr-code-icon.png" alt="QR Code" style="width: 16px; height: 16px;">
-                </button>
-                <button class="collapse-btn" id="collapse-thumbnails" title="Collapse/Expand thumbnails">
-                    <span class="collapse-icon">−</span>
                 </button>
             </div>
         </div>
     </header>
     
-    <!-- Desktop 4-Column Layout -->
-    <main class="four-column-layout">
+    <!-- Desktop 2-Column Layout -->
+    <main class="two-column-layout">
         <section class="questions-column">
             <ul class="question-list">
                 <li><button class="question-btn" data-question="1">1. What were they trying to do?</button></li>
@@ -69,14 +67,14 @@
 
             </ul>
         </section>
-        
+
         <section class="answers-column">
             <div class="answer-content">
                 <p class="placeholder">Click a question to see the answer</p>
             </div>
         </section>
-        
-        <section class="page-column">
+
+        <section class="page-column" style="display:none">
             <div class="page-content">
                 <h3>Direct Preference Optimization: Your Language Model is Secretly a Reward Model</h3>
 <p><h1>Direct Preference Optimization: Your Language Model is Secretly a Reward Model</h1></p><p>Rafael Rafailov [Equal contribution; more junior authors listed earlier. ] Archit Sharma [Sharma] Eric Mitchell [Sharma] Stefano Ermon [Stefano Ermon] Christopher D. Manning [Christoph Ermon] Chelsea Finn [Shee] ^{†}Stanford University ^{‡}CZ Biohub
@@ -84,9 +82,8 @@
 Figure 1: DPO optimizes for human preferences while avoiding reinforcement learning. Existing methods for fine-tuning language models with human feedback first fit a reward model to a dataset of prompts and human preferences over pairs of responses, and then use RL to find a policy that maximizes the learned reward. In contrast, DPO directly optimizes for the policy best satisfying the preferences with a simple classification objective, fitting an implicit reward model whose corresponding optimal policy can be extracted in closed form.</p><p>![img-1.jpeg](img-1.jpeg)</p><p>we will show that the RL-based objective used by existing methods can be optimized exactly with a simple binary cross-entropy objective, greatly simplifying the preference learning pipeline.</p><p>At a high level, existing methods instill the desired behaviors into a language model using curated sets of human preferences representing the types of behaviors that humans find safe and helpful. This preference learning stage occurs after an initial stage of large-scale unsupervised pre-training on a large text dataset. While the most straightforward approach to preference learning is supervised fine-tuning on human demonstrations of high quality responses, the most successful class of methods is reinforcement learning from human (or AI) feedback (RLHF/RLAIF; [12, 2]). RLHF methods fit a reward model to a dataset of human preferences and then use RL to optimize a language model policy to produce responses assigned high reward without drifting excessively far from the original model. While RLHF produces models with impressive conversational and coding abilities, the RLHF pipeline is considerably more complex than supervised learning, involving training multiple LMs and sampling from the LM policy in the loop of training, incurring significant computational costs.</p><p>In this paper, we show how to directly optimize a language model to adhere to human preferences, without explicit reward modeling or reinforcement learning. We propose Direct Preference Optimization (DPO), an algorithm that implicitly optimizes the same objective as existing RLHF algorithms (reward maximization with a KL-divergence constraint) but is simple to implement and straightforward to train. Intuitively, the DPO update increases the relative log probability of preferred to dispreferred responses, but it incorporates a dynamic, per-example importance weight that prevents the model degeneration that we find occurs with a naive probability ratio objective. Like existing algorithms, DPO relies on a theoretical preference model (such as the Bradley-Terry model; [5]) that measures how well a given reward function aligns with empirical preference data. However, while existing methods use the preference model to define a preference loss to train a reward model and then train a policy that optimizes the learned reward model, DPO uses a change of variables to define the preference loss as a function of the policy directly. Given a dataset of human preferences over model responses, DPO can therefore optimize a policy using a simple binary cross entropy objective, producing the optimal policy to an implicit reward function fit to the preference data.</p><p>Our main contribution is Direct Preference Optimization (DPO), a simple RL-free algorithm for training language models from preferences. Our experiments show that DPO is at least as effective as existing methods, including PPO-based RLHF, for learning from preferences in tasks such as sentiment modulation, summarization, and dialogue, using language models with up to 6B parameters.</p>
             </div>
         </section>
-        
-        <section class="thumbnails-column" id="thumbnails-column">
-            <h3>Thumbnails</h3>
+
+        <section class="thumbnails-column" id="thumbnails-column" style="display:none">
             <div class="thumbnail-content" id="thumbnail-content">
                 <ul class="thumbnail-list">
                     <li><button class="thumbnail-btn" data-page="1">1. Direct Preference Optimization: Your Language Model is Secretly a Reward Model</button></li>

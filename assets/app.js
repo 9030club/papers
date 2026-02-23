@@ -1,7 +1,7 @@
 // RYO Column Interface - Desktop & Mobile
 let currentQuestion = null;
 let currentPage = 1;
-let currentMode = 'markdown';
+let currentMode = 'qa';
 let currentMobileTab = 'qa';
 let currentMobileIndex = 1;
 
@@ -34,21 +34,6 @@ function initializeColumnInterface() {
         currentMobileIndex = parseInt(firstQuestionNum);
         loadMobileContent();
     }
-    
-    // Process MathJax after initialization (in case MathJax is already loaded)
-    // Also set up a check for when MathJax becomes available
-    const processMathJax = () => {
-        if (window.MathJax && window.MathJax.typesetPromise) {
-            window.MathJax.typesetPromise();
-        }
-    };
-    
-    // Try immediately
-    processMathJax();
-    
-    // Also try after a short delay in case MathJax is still loading
-    setTimeout(processMathJax, 100);
-    setTimeout(processMathJax, 500);
     
     // Hide PDF mode button if no PDF images available
     if (!window.paperData.pdf_images || !window.paperData.pdf_images.pages) {
@@ -148,65 +133,20 @@ function loadMobileQA() {
     
     // Load content
     const content = document.querySelector('.mobile-content-inner');
-    
-    // Special handling for core analysis (Q4)
-    if (currentQuestionNum === "4") {
-        const coreAnalysis = window.paperData.core_analysis;
-        if (coreAnalysis && coreAnalysis.output_data) {
-            const outputData = coreAnalysis.output_data;
-            content.innerHTML = `
-                <div style="margin-bottom: 1rem;">
-                    <h3 style="color: #FF8C00; margin-bottom: 0.5rem;">Q${currentQuestionNum}: ${questionData.question}</h3>
-                    <div style="padding: 1rem; background: #FFF8DC; border-radius: 8px; border-left: 4px solid #FF8C00;">
-                        <div class="core-analysis-content">
-                            <h4 style="color: #8B4513; margin-top: 0;">Core Contribution</h4>
-                            <p style="margin: 0 0 1rem 0; line-height: 1.6;">${outputData.core_contribution}</p>
-                            
-                            <h4 style="color: #8B4513;">Method Breakdown</h4>
-                            <p style="margin: 0 0 1rem 0; line-height: 1.6;">${outputData.method_breakdown}</p>
-                            
-                            <h4 style="color: #8B4513;">Subsystems/Parts</h4>
-                            <p style="margin: 0 0 1rem 0; line-height: 1.6;">${outputData.subsystems_parts}</p>
-                            
-                            <h4 style="color: #8B4513;">Interactions</h4>
-                            <p style="margin: 0 0 1rem 0; line-height: 1.6;">${outputData.interactions}</p>
-                            
-                            <h4 style="color: #8B4513;">Delta vs Baseline</h4>
-                            <p style="margin: 0 0 1rem 0; line-height: 1.6;">${outputData.delta_vs_baseline}</p>
-                            
-                            <h4 style="color: #8B4513;">Evidence Anchor</h4>
-                            <p style="margin: 0 0 1rem 0; line-height: 1.6;">${outputData.evidence_anchor}</p>
-                            
-                            <h4 style="color: #8B4513;">Transferability</h4>
-                            <p style="margin: 0; line-height: 1.6;">${outputData.transferability}</p>
-                        </div>
-                    </div>
-                </div>
-            `;
-        } else {
-            content.innerHTML = `
-                <div style="margin-bottom: 1rem;">
-                    <h3 style="color: #0066cc; margin-bottom: 0.5rem;">Q${currentQuestionNum}: ${questionData.question}</h3>
-                    <div style="padding: 1rem; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #0066cc;">
-                        <p style="margin: 0; line-height: 1.6;">Core analysis not available. Run 'ryo dera-core' first.</p>
-                    </div>
-                </div>
-            `;
-        }
-    } else {
-        content.innerHTML = `
-            <div style="margin-bottom: 1rem;">
-                <h3 style="color: #0066cc; margin-bottom: 0.5rem;">Q${currentQuestionNum}: ${questionData.question}</h3>
-                <div style="padding: 1rem; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #0066cc;">
-                    <p style="margin: 0; line-height: 1.6;">${questionData.answer}</p>
-                </div>
+    content.innerHTML = `
+        <div style="margin-bottom: 1rem;">
+            <h3 style="color: #0066cc; margin-bottom: 0.5rem;">Q${currentQuestionNum}: ${questionData.question}</h3>
+            <div style="padding: 1rem; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #0066cc;">
+                <p style="margin: 0; line-height: 1.6;">${questionData.answer}</p>
             </div>
-        `;
-    }
-    
-    // Re-render MathJax after content is loaded
+        </div>
+    `;
+
+    // Re-typeset math after content update
     if (window.MathJax && window.MathJax.typesetPromise) {
-        window.MathJax.typesetPromise();
+        window.MathJax.typesetPromise([content]).catch((err) => {
+            console.error('MathJax typeset error:', err);
+        });
     }
 }
 
@@ -267,16 +207,13 @@ function loadMobileMarkdown() {
             </div>
         </div>
     `;
-    
-    // Re-render MathJax after content is loaded
-    const processMath = () => {
-        if (window.MathJax && window.MathJax.typesetPromise) {
-            window.MathJax.typesetPromise();
-        } else {
-            setTimeout(processMath, 100);
-        }
-    };
-    processMath();
+
+    // Re-typeset math after content update
+    if (window.MathJax && window.MathJax.typesetPromise) {
+        window.MathJax.typesetPromise([content]).catch((err) => {
+            console.error('MathJax typeset error:', err);
+        });
+    }
 }
 
 function scrollContentToTop() {
@@ -363,7 +300,7 @@ function setupModeHandlers() {
 }
 
 function setupQuestionHandlers() {
-    const questionBtns = document.querySelectorAll('.question-btn');
+    const questionBtns = document.querySelectorAll('.question-btn, .core-analysis-btn');
     questionBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
             const questionNum = e.target.dataset.question;
@@ -387,102 +324,44 @@ function setupThumbnailHandlers() {
             }
         });
     });
-    
-    // Setup collapse button for thumbnails column
-    const collapseBtn = document.getElementById('collapse-thumbnails');
-    if (collapseBtn) {
-        collapseBtn.addEventListener('click', toggleThumbnailsColumn);
-    }
-}
-
-function toggleThumbnailsColumn() {
-    const thumbnailsColumn = document.getElementById('thumbnails-column');
-    const layout = document.querySelector('.four-column-layout');
-    const collapseIcon = document.querySelector('.collapse-icon');
-    const collapseBtn = document.getElementById('collapse-thumbnails');
-    
-    console.log('Elements found:', { thumbnailsColumn, layout, collapseIcon, collapseBtn });
-    
-    if (thumbnailsColumn.classList.contains('collapsed')) {
-        // Expand
-        thumbnailsColumn.classList.remove('collapsed');
-        if (layout) layout.classList.remove('collapsed-thumbnails');
-        collapseIcon.textContent = '−';
-        collapseBtn.title = 'Collapse thumbnails';
-    } else {
-        // Collapse
-        thumbnailsColumn.classList.add('collapsed');
-        if (layout) layout.classList.add('collapsed-thumbnails');
-        collapseIcon.textContent = '+';
-        collapseBtn.title = 'Expand thumbnails';
-    }
 }
 
 function selectQuestion(questionNum) {
     // Update active question
-    document.querySelectorAll('.question-btn').forEach(btn => {
+    document.querySelectorAll('.question-btn, .core-analysis-btn').forEach(btn => {
         btn.classList.remove('active');
     });
     document.querySelector(`[data-question="${questionNum}"]`).classList.add('active');
-    
+
     // Show answer
     const questionData = window.paperData.questions[questionNum];
     if (questionData) {
         const answerContent = document.querySelector('.answer-content');
-        
-        // Special handling for core analysis (Q4)
-        if (questionNum === "4") {
-            const coreAnalysis = window.paperData.core_analysis;
-            if (coreAnalysis && coreAnalysis.output_data) {
-                const outputData = coreAnalysis.output_data;
-                answerContent.innerHTML = `
-                    <div class="core-analysis-content">
-                        <h2>Core Contribution</h2>
-                        <p>${outputData.core_contribution}</p>
-                        
-                        <h2>Method Breakdown</h2>
-                        <p>${outputData.method_breakdown}</p>
-                        
-                        <h2>Subsystems/Parts</h2>
-                        <p>${outputData.subsystems_parts}</p>
-                        
-                        <h2>Interactions</h2>
-                        <p>${outputData.interactions}</p>
-                        
-                        <h2>Delta vs Baseline</h2>
-                        <p>${outputData.delta_vs_baseline}</p>
-                        
-                        <h2>Evidence Anchor</h2>
-                        <p>${outputData.evidence_anchor}</p>
-                        
-                        <h2>Transferability</h2>
-                        <p>${outputData.transferability}</p>
-                    </div>
-                `;
-            } else {
-                answerContent.innerHTML = `
-                    <h4>Q${questionNum}: ${questionData.question}</h4>
-                    <p>Core analysis not available. Run 'ryo dera-core' first.</p>
-                `;
-            }
+
+        if (questionNum === "11" && questionData.type === "core_analysis") {
+            // Format core analysis with markdown-like rendering
+            answerContent.innerHTML = `
+                <h4>🎯 Core Analysis</h4>
+                <div class="core-analysis-content">
+                    ${questionData.answer}
+                </div>
+            `;
         } else {
+            // Regular Q&A formatting
             answerContent.innerHTML = `
                 <h4>Q${questionNum}: ${questionData.question}</h4>
                 <p>${questionData.answer}</p>
             `;
         }
-        
-        // Re-render MathJax after content is loaded
-        const processMath = () => {
-            if (window.MathJax && window.MathJax.typesetPromise) {
-                window.MathJax.typesetPromise();
-            } else {
-                setTimeout(processMath, 100);
-            }
-        };
-        processMath();
+
+        // Re-typeset math after content update
+        if (window.MathJax && window.MathJax.typesetPromise) {
+            window.MathJax.typesetPromise([answerContent]).catch((err) => {
+                console.error('MathJax typeset error:', err);
+            });
+        }
     }
-    
+
     currentQuestion = questionNum;
 }
 
@@ -496,18 +375,26 @@ function loadPage(pageNum) {
 
 function switchMode(mode) {
     if (mode === currentMode) return;
-    
+
     // Update mode buttons
-    document.querySelectorAll('.mode-btn').forEach(btn => {
-        btn.classList.remove('active');
-    });
+    document.querySelectorAll('.mode-btn').forEach(btn => btn.classList.remove('active'));
     document.querySelector(`[data-mode="${mode}"]`).classList.add('active');
-    
+
     currentMode = mode;
-    
-    // Update thumbnails and content based on mode
-    updateThumbnails();
-    loadPage(currentPage);
+
+    // Show the right column pair
+    const qaColumns = document.querySelectorAll('.questions-column, .answers-column');
+    const contentColumns = document.querySelectorAll('.page-column, .thumbnails-column');
+
+    if (mode === 'qa') {
+        qaColumns.forEach(el => el.style.display = '');
+        contentColumns.forEach(el => el.style.display = 'none');
+    } else {
+        qaColumns.forEach(el => el.style.display = 'none');
+        contentColumns.forEach(el => el.style.display = '');
+        updateThumbnails();
+        loadPage(currentPage);
+    }
 }
 
 function updateThumbnails() {
@@ -559,33 +446,28 @@ function loadPage(pageNum) {
 function loadMarkdownPage(pageNum) {
     const page = window.paperData.markdown_pages?.find(p => p.id === pageNum);
     if (!page) return;
-    
+
     // Update active thumbnail
     document.querySelectorAll('.thumbnail-btn').forEach(btn => {
         btn.classList.remove('active');
     });
     document.querySelector(`[data-page="${pageNum}"]`)?.classList.add('active');
-    
+
     // Load page content
     const pageContent = document.querySelector('.page-content');
     pageContent.innerHTML = `
         <h3>${page.title}</h3>
         ${formatMarkdownContent(page.content)}
     `;
-    
+
+    // Re-typeset math after content update
+    if (window.MathJax && window.MathJax.typesetPromise) {
+        window.MathJax.typesetPromise([pageContent]).catch((err) => {
+            console.error('MathJax typeset error:', err);
+        });
+    }
+
     currentPage = pageNum;
-    
-    // Re-render MathJax after content is loaded
-    // Wait for MathJax to be ready if it's still loading
-    const processMath = () => {
-        if (window.MathJax && window.MathJax.typesetPromise) {
-            window.MathJax.typesetPromise();
-        } else {
-            // MathJax not ready yet, try again after a short delay
-            setTimeout(processMath, 100);
-        }
-    };
-    processMath();
 }
 
 function loadPDFPage(pageNum) {
@@ -613,7 +495,6 @@ function loadPDFPage(pageNum) {
 
 function formatMarkdownContent(content) {
     // Basic markdown to HTML conversion
-    // Math formulas will be preserved as-is and processed by MathJax
     let html = content;
     
     // Headers
