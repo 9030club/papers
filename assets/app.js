@@ -385,12 +385,15 @@ function switchMode(mode) {
     const qaColumns = document.querySelectorAll('.questions-column, .answers-column');
     const contentColumns = document.querySelectorAll('.page-column, .thumbnails-column');
 
+    const layout = document.querySelector('.two-column-layout');
     if (mode === 'qa') {
         qaColumns.forEach(el => el.style.display = '');
         contentColumns.forEach(el => el.style.display = 'none');
+        layout.classList.remove('narrow-thumbnails');
     } else {
         qaColumns.forEach(el => el.style.display = 'none');
         contentColumns.forEach(el => el.style.display = '');
+        layout.classList.toggle('narrow-thumbnails', mode === 'pdf');
         updateThumbnails();
         loadPage(currentPage);
     }

@@ -98,6 +98,10 @@ body {
     background: #ddd;
 }
 
+.two-column-layout.narrow-thumbnails {
+    grid-template-columns: 4fr 1fr;
+}
+
 .questions-column,
 .answers-column,
 .page-column,
